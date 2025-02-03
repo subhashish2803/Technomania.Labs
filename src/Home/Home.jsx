@@ -15,7 +15,7 @@ function Home() {
         <Banner/>
         
         <Portfolio/>
-       <ExpertiseCarousel/
+       <ExpertiseCarousel/>
         <Footer/>
     </div>
     </>
