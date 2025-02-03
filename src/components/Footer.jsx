@@ -4,14 +4,7 @@ function Footer() {
   return (
     <footer className="bg-gray-100 text-gray-600 py-8">
       <div className="max-w-screen-2xl mx-auto px-4">
-        {/* Footer Image Section */}
-        <div className="mb-6">
-          <img
-            src="/logos/footer.webp"
-            className="w-full h-80 object-cover"
-          />
-        </div>
-
+        
         {/* Footer Content Section */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-start">
           {/* Creator Info Section */}

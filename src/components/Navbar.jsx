@@ -53,7 +53,7 @@ function Navbar() {
         {/* Logo */}
         <a href="/" className="flex items-center">
           <img
-            src="/public/logos/mylogo.jpg"
+            src="/logos/mylogo.jpg"
             alt="Technomania Labs Logo"
             className="h-8 w-8 rounded-full object-cover"
           />
