@@ -13,8 +13,9 @@ function Home() {
     <div>
         <Navbar/>
         <Banner/>
-        <ExpertiseCarousel/>
+        
         <Portfolio/>
+       <ExpertiseCarousel/
         <Footer/>
     </div>
     </>
