@@ -1,0 +1,34 @@
+/* Galaxy Background */
+.galaxy-background {
+    background: radial-gradient(circle, rgba(63, 94, 251, 0.3) 0%, transparent 60%),
+      radial-gradient(circle, rgba(252, 70, 107, 0.3) 20%, transparent 70%),
+      radial-gradient(circle, rgba(63, 94, 251, 0.2) 40%, transparent 80%);
+    background-color: #000000;
+    background-size: 1200px 1200px;
+    animation: moveGalaxy 30s infinite linear;
+  }
+  
+  /* Galaxy Animation */
+  @keyframes moveGalaxy {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 1000px 1000px;
+    }
+  }
+  
+  /* Revolving Planet Animation */
+  .revolving-planet {
+    animation: revolvePlanet 8s infinite linear;
+  }
+  
+  @keyframes revolvePlanet {
+    0% {
+      transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+  }
+  
