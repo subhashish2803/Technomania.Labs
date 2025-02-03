@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import Portfolio from '../components/Portfolio'
+import Portfolio from '../components/ExpertiseCarousel'
 
 
 
@@ -12,7 +13,7 @@ function Home() {
     <div>
         <Navbar/>
         <Banner/>
-        
+        <ExpertiseCarousel/>
         <Portfolio/>
         <Footer/>
     </div>
