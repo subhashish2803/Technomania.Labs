@@ -5,7 +5,6 @@ function Footer() {
     <footer className="bg-gray-100 text-gray-600 py-8">
       <div className="max-w-screen-2xl mx-auto px-4">
         
-
         {/* Footer Content Section */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-start">
           {/* Creator Info Section */}
