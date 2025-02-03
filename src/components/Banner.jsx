@@ -263,7 +263,7 @@ function Banner() {
               </a>
             </div>
           </div>
-          <div className="relative flex flex-col items-center justify-center bg-gray-100 px-6 mb-5">
+          <div className="relative flex sm:flex-col items-center sm:h-auto justify-center bg-gray-100 px-6 mb-5">
             {/* Grid Background */}
             <div
               className="absolute inset-0 bg-white"
