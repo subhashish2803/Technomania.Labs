@@ -13,7 +13,7 @@ const milestones = [
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen dark:bg-base-300 bg-black text-white font-sans flex flex-col items-center px-6 py-20 relative overflow-hidden">
+    <div className="min-h-screen dark:bg-white bg-black text-white font-sans flex flex-col items-center px-6 py-20 relative overflow-hidden">
       {/* Background Gradient Effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900 via-black to-black-200 opacity-20 z-0"
         style={{

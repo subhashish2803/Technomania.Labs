@@ -220,7 +220,7 @@ function Banner() {
 
   return (
     <>
-      <body className="min-h-screen dark:bg-base-200 text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
+      <body className="min-h-screen dark:bg-white text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
         {/* Left Section */}
         <div className="order-2 md:order-1 w-full md:w-2/3 mt-12 text-white ">
           <div className="bg-blue-55 shadow-md rounded-lg p-6 mb-6 container mx-auto ">
@@ -369,7 +369,7 @@ function Banner() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.4 }}
-            className="bg-slate-900 dark:bg-base-200 text-black font-sans p-6 rounded-lg shadow-lg"
+            className="bg-slate-900 dark:bg-white text-black font-sans p-6 rounded-lg shadow-lg"
           >
             <h2 className="text-2xl font-bold text-white dark:text-black font-sans mb-4">Our Service Journey</h2>
             <div className="relative border-l-2 border-green-500 ml-4">
@@ -392,7 +392,7 @@ function Banner() {
           </motion.div>
         </div>
       </body >
-      <div className="flex flex-wrap md:flex-nowrap items-start gap-6 p-6 dark:bg-base-200">
+      <div className="flex flex-wrap md:flex-nowrap items-start gap-6 p-6 dark:bg-white">
   {/* Left Section: Technologies */}
   <div className="w-full md:w-2/3 lg:w-2/3 flex flex-wrap gap-6">
     {["React", "Tailwind CSS", "Node.js & Express.js", "MongoDB", "MySQL", "API Fetching", "Daisy UI", "Next.js", "Redux & Zustand"].map((tech) => (
