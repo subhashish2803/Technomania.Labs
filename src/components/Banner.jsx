@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Star, User } from "lucide-react";
 import { motion } from "framer-motion";
+import { CheckCircle, Code, Briefcase, FileText, Rocket } from "lucide-react";
 
 function Banner() {
-  const [content, setContent] = useState(null); // Initialize content as null
+   // Initialize content as null
   const [typedCode, setTypedCode] = useState("");
   const [codeIndex, setCodeIndex] = useState(0);
   const codeContainerRef = useRef(null);
@@ -33,6 +34,19 @@ function Banner() {
     { stars: 2, percentage: 20 },
     { stars: 1, percentage: 10 },
   ];
+  const services = [
+    { id: 1, title: "Consultation", icon: <Briefcase />, description: "Understand client needs and suggest solutions." },
+    { id: 2, title: "UI/UX Design", icon: <FileText />, description: "Create stunning, user-friendly designs." },
+    { id: 3, title: "Development", icon: <Code />, description: "Build responsive and scalable applications." },
+    { id: 4, title: "Testing & QA", icon: <CheckCircle />, description: "Ensure flawless performance and security." },
+    { id: 5, title: "Deployment", icon: <Rocket />, description: "Launch and maintain high-performing solutions." },
+  ];
+  const [content, setContent] = useState({
+    title: "Redux & Zustand",
+    logo: "/logos/redux.svg",
+    description: "State management with Redux and Zustand, two libraries for managing state in React applications.",
+    code: `// Redux Example\n// Action\nconst increment = () => ({ type: 'INCREMENT' });\n\n// Reducer\nconst counter = (state = 0, action) => {\n  switch (action.type) {\n    case 'INCREMENT':\n      return state + 1;\n    default:\n      return state;\n  }\n};\n\n// Store\nconst store = createStore(counter);\n\n// Zustand Example\n// Store\nconst useStore = create((set) => ({\n  count: 0,\n  increment: () => set((state) => ({ count: state.count + 1 })),\n}));\n\n// Usage\nconst Component = () => {\n  const { count, increment } = useStore();\n  return <button onClick={increment}>Count: {count}</button>;\n};`,
+  });
 
   const handleCardClick = (technology) => {
     switch (technology) {
@@ -98,7 +112,7 @@ function Banner() {
       case "Daisy UI":
         setContent({
           title: "Daisy UI",
-          logo: "/logos/daisyui",
+          logo: "/logos/daisyui.svg",
           description: "A Tailwind CSS plugin that provides pre-built components for faster development.",
           code: `// Installation\nnpm install daisyui\n\n// Tailwind Configuration\nmodule.exports = {\n  content: ['./src/**/*.{js,jsx,ts,tsx}',],\n  theme: { extend: {}, },\n  plugins: [require('daisyui')],\n};\n\n// Example Button\n<button className=\"btn btn-primary\">Daisy UI Button</button>`,
         });
@@ -120,19 +134,7 @@ function Banner() {
           code: `// Installation\nnpm install daisyui\n\n// Tailwind Configuration\nmodule.exports = {\n  content: ['./src/**/*.{js,jsx,ts,tsx}',],\n  theme: { extend: {}, },\n  plugins: [require('daisyui')],\n};\n\n// Example Button\n<button className=\"btn btn-primary\">Daisy UI Button</button>`,
         });
         break;
-      case "TypeScript":
-        setContent({
-          title: "TypeScript",
-          logo: "/logos/typescript.svg",
-          description: "A strongly typed programming language that builds on JavaScript, adding static types.",
-          code: `// Installation\nnpm install -g typescript\n\n// Sample Code\nconst greet = (name: string): string => {\n  return \`Hello, \${name}!\`;\n};\n\nconsole.log(greet('TypeScript'));`,
-          additionalInfo: "Visit the official documentation: https://www.typescriptlang.org",
-        });
-        break;
 
-
-      default:
-        setContent(null); // Reset content
     }
     setTypedCode("");
     setCodeIndex(0);
@@ -166,6 +168,7 @@ function Banner() {
     setFeedback("");
   };
 */}
+
   const handleResumeUpload = (event) => {
     const file = event.target.files[0];
     if (file && file.type === "application/pdf") {
@@ -210,14 +213,14 @@ function Banner() {
     "Daisy UI": "Tailwind CSS components for UI design.",
     "Next.js": "A React framework for server-rendered apps.",
     "Redux & Zustand": "State management tools for React.",
-    "TypeScript": "A strongly typed superset of JavaScript.",
+
   };
 
 
 
   return (
     <>
-      <body className="min-h-screen dark:bg-white text-gray-400 max-w-screen-2xl md:px-20 px-4 flex flex-col md:flex-row font-sans">
+      <body className="min-h-screen dark:bg-base-200 text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
         {/* Left Section */}
         <div className="order-2 md:order-1 w-full md:w-2/3 mt-12 text-white ">
           <div className="bg-blue-55 shadow-md rounded-lg p-6 mb-6 container mx-auto ">
@@ -263,7 +266,19 @@ function Banner() {
               </a>
             </div>
           </div>
-          <div className="relative flex sm:flex-col items-center sm:h-auto justify-center bg-gray-100 px-6 mb-5">
+
+          <motion.div
+            initial={{ x: '100vw', opacity: 0, scaleX: 0.8 }}  // Slide in from right and start squeezed
+            animate={{ x: 0, opacity: 1, scaleX: 1 }}          // Slide to original position and expand to full width
+            transition={{
+              type: 'spring',
+              stiffness: 80,               // Controls the springiness of the slide-in
+              damping: 25,                 // Controls the spring's resistance as it settles
+              ease: "easeOut",             // Smooth, ease-out effect for final position
+              duration: 2                 // Duration for the entire transition
+            }}
+            className="relative flex sm:flex-col items-center sm:h-auto justify-center shadow-md rounded-lg bg-gray-100 px-6 mb-5"
+          >
             {/* Grid Background */}
             <div
               className="absolute inset-0 bg-white"
@@ -285,159 +300,180 @@ function Banner() {
               <div className="text-sm">
                 <p className="text-black font-sans font-semibold text-xs">Got Placed</p>
                 <p className="font-semibold text-black font-sans">Mayur Jain</p>
-                <p className="text-gray-500 text-xs font-sans">Cognizant     <span className="ml-10 font-sans rounded-full bg-black text-green-500 py-1 px-1 flex-row items-center justify-center">10 LPA</span></p>
+                <p className="text-gray-500 text-xs font-sans">
+                  Cognizant{" "}
+                  <span className="ml-10 font-sans rounded-full bg-black text-green-500 py-1 px-1 flex-row items-center justify-center">
+                    10 LPA
+                  </span>
+                </p>
               </div>
             </motion.div>
 
             {/* Hero Content with Green Background */}
-            <div className="relative p-6 rounded-2xl flex justify-center items-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              className="relative p-6 rounded-2xl flex justify-center items-center"
+            >
               <img
                 src="/logos/hero.webp"
                 alt="Student"
                 className="w-full max-w-xs h-auto rounded-2xl object-cover shadow-lg"
               />
-            </div>
+            </motion.div>
 
             {/* Additional Student Placement Notification */}
-
             <motion.div
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0 }}
-  className="absolute bottom-10 right-8 bg-white shadow-lg rounded-lg px-6 py-3 flex flex-col items-start space-y-2 border-2 border-green-600 w-64 h-auto"  // Adjust height based on content
->
-  <div className="flex items-center gap-2">
-    <img
-      src="/logos/mylogo.jpg"
-      alt="Technomania Logo"
-      className="w-8 h-8 rounded-full"
-    />
-    <div>
-      <div className="rating-container space-y-1"> {/* Reduce space between rating rows */}
-        {ratings.map((rating, index) => (
-          <div key={index} className="rating-col flex flex-col items-start">
-            <span className="text-black text-xs"> {/* Smaller font for stars */}
-              {rating.stars} ★
-            </span>
-            <motion.div
-              className="rating-bar-wrapper w-full bg-gray-200 rounded-full"
-              initial={{ width: 0 }}
-              animate={{ width: `${rating.percentage}%` }}
-              transition={{ duration: 1 }}
-              style={{ height: '6px' }} // Bar height
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0 }}
+              className="absolute bottom-10 right-8 bg-white shadow-lg rounded-lg px-6 py-3 flex flex-col items-start space-y-2 border-2 border-green-600 w-64 h-auto"
             >
-              <motion.div
-                className="rating-bar bg-gradient-to-r from-green-400 to-green-600 rounded-full"
-                style={{ height: '100%' }} // Ensures the gradient fills the full height of the bar
-              />
-            </motion.div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</motion.div>
-
-
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 "
-          >
-            {["React", "Tailwind CSS", "Node.js & Express.js", "MongoDB", "MySQL", "API Fetching", "Daisy UI", "Next.js", "Redux & Zustand", "TypeScript"].map((tech) => (
-              <button
-                key={tech}
-                onClick={() => handleCardClick(tech)}
-                className="block bg-blue-55 shadow-md rounded-xl p-6 text-white hover:scale-105 duration-200 card bg-gray shadow-xl  rounded-lg p-4 relative mb-2"
-                style={{
-                  borderWidth: '2px',
-                  borderStyle: 'solid',
-                  borderRadius: '12px',
-                  borderImage: 'linear-gradient(45deg, #10B981, #3B82F6, #9333EA) 1', // Green to Blue to Purple gradient
-                }}
-
-              >
+              <div className="flex items-center gap-2">
                 <img
-                  src={`/logos/${tech === 'Next.js' ? 'nextjs' : tech === 'Redux & Zustand' ? 'redux' : tech.toLowerCase().replace(/ & /g, '').replace(/\s+/g, '')}.svg`}
-                  alt={`${tech} logo`}
-                  className="h-14 w-14 mx-auto mb-4"
+                  src="/logos/mylogo.jpg"
+                  alt="Technomania Logo"
+                  className="w-8 h-8 rounded-full"
                 />
-                <h3 className="text-white  mb-2">
-                  <span className="dark:text-black text-white text-transparent bg-clip-text font-bold">
-                    {tech}
-                  </span>
-                </h3>
-                <p className=" text-sm transition-colors duration-500 text-slate-400 dark:text-slate-600"> {descriptions[tech]}</p>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Right Section (Sample Code) */}
-        {content && (
-          <div ref={codeContainerRef} className="bg-blue-55 order-2 text-white md:order-1 w-full md:w-1/3 mt-12 md:mt-32 container mx-auto my-8 shadow-md rounded-lg p-6 mb-0 ml-2">
-            <img
-              src={content.logo}
-              alt={`${content.title} logo`}
-              className="h-20 w-20 mx-auto mb-4 animate-spin-slow "
-            />
-            <h2 className=" text-white text-2xl mb-2 text-white dark:text-black">
-              {content.title}
-            </h2>
-            <p className="transition-colors duration-500  text-slate-400 dark:text-slate-600">{content.description}</p>
-            <div className="relative">
-              {/* Code Snippet */}
-              <pre
-                ref={codeContainerRef}
-                className="bg-gray-800 p-4 rounded-lg shadow-lg overflow-x-auto mt-4 border border-gray-700 dark:bg-gray-900 text-white"
-              >
-                <code className="whitespace-pre-wrap   text-sm leading-relaxed">
-                  {typedCode
-                    .split("\n")
-                    .map((line, index) => (
-                      <div key={index} className="flex items-start">
-                        {/* Line Numbers */}
-                        <span className="text-gray-500 pr-4 select-none">
-                          {index + 1}
+                <div>
+                  <div className="rating-container space-y-1">
+                    {ratings.map((rating, index) => (
+                      <div key={index} className="rating-col flex flex-col items-start">
+                        <span className="text-black text-xs">
+                          {rating.stars} ★
                         </span>
-                        {/* Code Line */}
-                        <span className="text-sky-300">{line}</span>
+                        <motion.div
+                          className="rating-bar-wrapper w-full bg-gray-200 rounded-full"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${rating.percentage}%` }}
+                          transition={{ duration: 1 }}
+                          style={{ height: '6px' }}
+                        >
+                          <motion.div
+                            className="rating-bar bg-gradient-to-r from-green-400 to-green-600 rounded-full"
+                            style={{ height: '100%' }}
+                          />
+                        </motion.div>
                       </div>
                     ))}
-                </code>
-              </pre>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
 
-
-              {/* Download Icon */}
-              <button
-                onClick={handleDownload}
-                className="text-xs leading-5 bg-slate-400/10 rounded-full py-2 mt-2 px-3 flex items-center space-x-2 dark:hover:bg-base-300 dark:text-black"
-                type="button"
-                aria-label=""
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-
+          </motion.div>
+        </div>
+        <div className="order-2 md:order-2 w-full md:w-1/3 p-4 mt-4 md:mt-32 md:px-6 md:mb-32">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.4 }}
+            className="bg-slate-900 dark:bg-base-200 text-black font-sans p-6 rounded-lg shadow-lg"
+          >
+            <h2 className="text-2xl font-bold text-white dark:text-black font-sans mb-4">Our Service Journey</h2>
+            <div className="relative border-l-2 border-green-500 ml-4">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  className="mb-6 pl-4"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 10l-4 4m0 0l-4-4m4 4V4"
-                  />
-                </svg>
-                <div></div>
-                <span className="transition-colors  text-sm  duration-500 text-slate-400 dark:text-black"></span>
-              </button>
+                  <div className="absolute -left-5 w-10 h-10 flex items-center justify-center bg-green-600 rounded-full text-white shadow-lg">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-md text-white font-sans dark:text-black font-semibold">{service.title}</h3>
+                  <p className="text-sm text-white font-sans dark:text-black font-sans">{service.description}</p>
+                </motion.div>
+              ))}
             </div>
-
-          </div>
-        )}
-
-
+          </motion.div>
+        </div>
       </body >
+      <div className="flex flex-wrap md:flex-nowrap items-start gap-6 p-6 dark:bg-base-200">
+  {/* Left Section: Technologies */}
+  <div className="w-full md:w-2/3 lg:w-2/3 flex flex-wrap gap-6">
+    {["React", "Tailwind CSS", "Node.js & Express.js", "MongoDB", "MySQL", "API Fetching", "Daisy UI", "Next.js", "Redux & Zustand"].map((tech) => (
+      <button
+        key={tech}
+        onClick={() => handleCardClick(tech)}
+        className="block bg-blue-55 shadow-md rounded-xl p-6 text-white hover:scale-105 duration-200 card bg-gray shadow-xl rounded-lg p-4 relative mb-2 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
+        style={{
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderRadius: '12px',
+          borderImage: 'linear-gradient(45deg, #10B981, #3B82F6, #9333EA) 1', // Green to Blue to Purple gradient
+        }}
+      >
+        <img
+          src={`/logos/${tech === 'Next.js' ? 'nextjs' : tech === 'Redux & Zustand' ? 'redux' : tech.toLowerCase().replace(/ & /g, '').replace(/\s+/g, '')}.svg`}
+          alt={`${tech} logo`}
+          className="h-14 w-14 mx-auto mb-4"
+        />
+        <h3 className="text-white mb-2">
+          <span className="dark:text-black text-white text-transparent bg-clip-text font-bold">
+            {tech}
+          </span>
+        </h3>
+        <p className="text-sm transition-colors duration-500 text-slate-400 dark:text-slate-600">{descriptions[tech]}</p>
+      </button>
+    ))}
+  </div>
+
+  {/* Right Section: Code Snippet */}
+  <div className="w-full md:w-1/3 xl:w-1/3 p-4 mt-4 md:mt-18 md:px-6 md:mb-32">
+    {content && (
+      <div
+        ref={codeContainerRef}
+        className="bg-blue-55 text-white container mx-auto shadow-md rounded-lg p-6 mb-0 ml-2"
+      >
+        <img
+          src={content.logo}
+          alt={`${content.title} logo`}
+          className="h-20 w-20 mx-auto mb-4 animate-spin-slow"
+        />
+        <h2 className="text-white text-2xl mb-2 text-white dark:text-black">
+          {content.title}
+        </h2>
+        <p className="transition-colors duration-500 text-slate-400 dark:text-slate-600">{content.description}</p>
+        <div className="relative">
+          {/* Code Snippet */}
+          <pre
+            ref={codeContainerRef}
+            className=" p-4 rounded-lg  overflow-x-auto mt-4 border border-gray-700 dark:bg-gray-900 text-white"
+            style={{ maxHeight: '300px', overflowY: 'auto' }} // Add max height and scroll for code only
+          >
+            <code className="whitespace-pre-wrap text-sm leading-relaxed">
+              {typedCode
+                .split("\n")
+                .map((line, index) => (
+                  <div key={index} className="flex items-start">
+                    {/* Line Numbers */}
+                    <span className="text-gray-500 pr-4 select-none">
+                      {index + 1}
+                    </span>
+                    {/* Code Line */}
+                    <span className="text-sky-300">{line}</span>
+                  </div>
+                ))}
+            </code>
+          </pre>
+        </div>
+      </div>
+    )}
+  </div>
+</div>
+
+
+
+
+      
+
+
+
+
     </>
   );
 }

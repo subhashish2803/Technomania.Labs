@@ -66,7 +66,7 @@ const ExpertiseCarousel = () => {
         {expertiseItems.map((item, index) => (
           <div
             key={index}
-            className="bg-black dark:bg-slate-900 dark:bg-gradient-to-l from-gray-200 via-fuchsia-200 shadow-lg rounded-lg p-6 md:p-10 flex flex-col justify-between items-center mb-6 mx-4"
+            className="bg-black dark:bg-base-200 shadow-lg rounded-lg p-6 md:p-10 flex flex-col justify-between items-center mb-6 mx-4"
             style={{ minHeight: '350px' }}
           >
             <div className="text-white dark:text-black text-center">

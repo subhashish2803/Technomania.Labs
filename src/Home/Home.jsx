@@ -8,13 +8,14 @@ import Tech from '../components/Tech'
 import Footer from '../components/Footer'
 
 
+
 function Home() {
   return (
     <>
     <div>
         <Navbar/>
         <Banner/>
-        
+
         <Portfolio/>
         <ExpertiseCarousel/>
         <Tech/>
