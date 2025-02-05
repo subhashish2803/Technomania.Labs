@@ -75,7 +75,7 @@ function Navbar() {
             Technomania Labs
           </span>
         </a>
-        <div className="flex justify-center items-center w-full max-w-40 sm:max-w-sm">
+        <div className="flex justify-center items-center w-full max-w-40 max-w-xs sm:max-w-sm">
       <a
         className="tooltip tooltip-accent relative flex flex-col w-full"
         href="https://github.com/saadeghi/daisyui/discussions/3246"
@@ -85,7 +85,7 @@ function Navbar() {
       >
         {/* Progress percentage label */}
         <div
-          className="text-[0.6rem] absolute font-sans text-white dark:text-black -top-4 -translate-x-1/2 rtl:translate-x-1/2"
+          className="text-[0.6rem] hidden sm:block absolute font-sans text-white dark:text-black -top-4 -translate-x-1/2 rtl:translate-x-1/2"
           style={{ insetInlineStart: "92%" }}
         >
           92%
@@ -93,7 +93,7 @@ function Navbar() {
 
         {/* Progress bar */}
         <progress
-          className="progress  w-full"
+          className="hidden sm:block progress w-full rounded-lg"
           max="100"
           value="92"
           style={{
