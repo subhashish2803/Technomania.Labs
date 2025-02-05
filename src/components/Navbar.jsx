@@ -105,7 +105,7 @@ function Navbar() {
 
         {/* Progress description with dynamic days */}
         <div className="text-white font-sans dark:text-black text-[0.6rem] tracking-wide absolute -bottom-4 text-center">
-          Technomania Labs 1.0.28 will be available in {daysLeft} days
+           V1.0.28 will be available in {daysLeft} days
         </div>
       </a>
     </div>
