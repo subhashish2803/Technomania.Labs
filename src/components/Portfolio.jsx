@@ -27,7 +27,7 @@ export default function Portfolio() {
   <img
     src="/logos/Myimage1.png" // Replace with your image path
     alt="Subhashish Nayak"
-    className="h-80 w-80 object-cover shadow-2xl"
+    className="h-80 w-80 object-cover shadow-2xl brightness-110 contrast-125 grayscale hover:grayscale-0 transition duration-300"
   />
   <h1 className="text-6xl font-extrabold mt-4">
     <span className="from-green-400 to-green-400 bg-gradient-to-r dark:from-violet-600 dark:to-blue-500 text-transparent bg-clip-text">Hi,</span> <span className="dark:text-black">I’m Subhashish Nayak</span>
@@ -123,7 +123,6 @@ export default function Portfolio() {
           <a href="mailto:nayaksubhashish456@gmail.com">
   <FaEnvelope className="cursor-pointer hover:text-gray-500 transition-all" />
 </a>
-
 
         </div>
       </section>

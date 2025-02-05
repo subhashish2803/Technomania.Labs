@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Star, User } from "lucide-react";
 import { motion } from "framer-motion";
-import { CheckCircle, Code, Briefcase, FileText, Rocket } from "lucide-react";
+import { FaCode, FaDatabase, FaCloud, FaRobot, FaMobileAlt, FaCube } from "react-icons/fa";
 
 function Banner() {
-   // Initialize content as null
+  // Initialize content as null
   const [typedCode, setTypedCode] = useState("");
   const [codeIndex, setCodeIndex] = useState(0);
   const codeContainerRef = useRef(null);
@@ -35,11 +35,42 @@ function Banner() {
     { stars: 1, percentage: 10 },
   ];
   const services = [
-    { id: 1, title: "Consultation", icon: <Briefcase />, description: "Understand client needs and suggest solutions." },
-    { id: 2, title: "UI/UX Design", icon: <FileText />, description: "Create stunning, user-friendly designs." },
-    { id: 3, title: "Development", icon: <Code />, description: "Build responsive and scalable applications." },
-    { id: 4, title: "Testing & QA", icon: <CheckCircle />, description: "Ensure flawless performance and security." },
-    { id: 5, title: "Deployment", icon: <Rocket />, description: "Launch and maintain high-performing solutions." },
+    {
+      id: 1,
+      title: "Full-Stack Development",
+      description: "Building scalable web apps using React, Next.js, Express.js, and MongoDB.",
+      icon: <FaCode />,
+    },
+    {
+      id: 2,
+      title: "API Development & Integration",
+      description: "Creating RESTful & GraphQL APIs to enhance data communication.",
+      icon: <FaDatabase />,
+    },
+    {
+      id: 3,
+      title: "Cloud & DevOps",
+      description: "Deploying scalable applications using AWS, Docker, Kubernetes, and CI/CD pipelines.",
+      icon: <FaCloud />,
+    },
+    {
+      id: 4,
+      title: "AI & Machine Learning",
+      description: "Integrating AI models into applications using OpenAI, TensorFlow, and NLP.",
+      icon: <FaRobot />,
+    },
+    {
+      id: 5,
+      title: "Mobile App Development",
+      description: "Developing cross-platform mobile apps using React Native and Flutter.",
+      icon: <FaMobileAlt />,
+    },
+    {
+      id: 6,
+      title: "Web3 & Blockchain",
+      description: "Building decentralized apps (dApps) and smart contracts with Solidity and Ethereum.",
+      icon: <FaCube />,
+    },
   ];
   const [content, setContent] = useState({
     title: "Redux & Zustand",
@@ -220,10 +251,10 @@ function Banner() {
 
   return (
     <>
-      <body className="min-h-screen dark:bg-white text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
+      <body className="min-h-screen dark:bg-white  text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
         {/* Left Section */}
         <div className="order-2 md:order-1 w-full md:w-2/3 mt-12 text-white ">
-          <div className="bg-blue-55 shadow-md rounded-lg p-6 mb-6 container mx-auto ">
+          <div className="shadow-md rounded-lg p-6 mb-6 container mx-auto ">
             <h1 className="text-4xl text-white dark:text-black sm:text-5xl relative">
               Get started with
               <span className="relative inline-block ml-2">
@@ -277,7 +308,7 @@ function Banner() {
               ease: "easeOut",             // Smooth, ease-out effect for final position
               duration: 2                 // Duration for the entire transition
             }}
-            className="relative flex sm:flex-col items-center sm:h-auto justify-center shadow-md rounded-lg bg-gray-100 px-6 mb-5"
+            className="relative flex sm:flex-col items-center sm:h-auto justify-center shadow-md md:mt-10 rounded-lg bg-gray-100 px-6 mb-5"
           >
             {/* Grid Background */}
             <div
@@ -364,14 +395,16 @@ function Banner() {
 
           </motion.div>
         </div>
-        <div className="order-2 md:order-2 w-full md:w-1/3 p-4 mt-4 md:mt-32 md:px-6 md:mb-32">
+        <div className="order-2 md:order-2 w-full md:w-1/3 p-4 mt-12 md:mt-6 md:px-6">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.4 }}
-            className="bg-slate-900 dark:bg-white text-black font-sans p-6 rounded-lg shadow-lg"
+            className="bg-slate-900 dark:bg-white text-black font-sans p-6 "
           >
-            <h2 className="text-2xl font-bold text-white dark:text-black font-sans mb-4">Our Service Journey</h2>
+            <h2 className="text-2xl font-bold text-white dark:text-black font-sans mb-4">
+              Our Service Journey
+            </h2>
             <div className="relative border-l-2 border-green-500 ml-4">
               {services.map((service, index) => (
                 <motion.div
@@ -384,96 +417,91 @@ function Banner() {
                   <div className="absolute -left-5 w-10 h-10 flex items-center justify-center bg-green-600 rounded-full text-white shadow-lg">
                     {service.icon}
                   </div>
-                  <h3 className="text-md text-white font-sans dark:text-black font-semibold">{service.title}</h3>
-                  <p className="text-sm text-white font-sans dark:text-black font-sans">{service.description}</p>
+                  <h3 className="text-md text-white font-sans dark:text-black font-semibold">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-white font-sans dark:text-black font-sans">
+                    {service.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
       </body >
-      <div className="flex flex-wrap md:flex-nowrap items-start gap-6 p-6 dark:bg-white">
-  {/* Left Section: Technologies */}
-  <div className="w-full md:w-2/3 lg:w-2/3 flex flex-wrap gap-6">
-    {["React", "Tailwind CSS", "Node.js & Express.js", "MongoDB", "MySQL", "API Fetching", "Daisy UI", "Next.js", "Redux & Zustand"].map((tech) => (
-      <button
-        key={tech}
-        onClick={() => handleCardClick(tech)}
-        className="block bg-blue-55 shadow-md rounded-xl p-6 text-white hover:scale-105 duration-200 card bg-gray shadow-xl rounded-lg p-4 relative mb-2 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
-        style={{
-          borderWidth: '2px',
-          borderStyle: 'solid',
-          borderRadius: '12px',
-          borderImage: 'linear-gradient(45deg, #10B981, #3B82F6, #9333EA) 1', // Green to Blue to Purple gradient
-        }}
-      >
-        <img
-          src={`/logos/${tech === 'Next.js' ? 'nextjs' : tech === 'Redux & Zustand' ? 'redux' : tech.toLowerCase().replace(/ & /g, '').replace(/\s+/g, '')}.svg`}
-          alt={`${tech} logo`}
-          className="h-14 w-14 mx-auto mb-4"
-        />
-        <h3 className="text-white mb-2">
-          <span className="dark:text-black text-white text-transparent bg-clip-text font-bold">
-            {tech}
-          </span>
-        </h3>
-        <p className="text-sm transition-colors duration-500 text-slate-400 dark:text-slate-600">{descriptions[tech]}</p>
-      </button>
-    ))}
-  </div>
+      <div className="flex flex-wrap md:flex-nowrap items-start gap-6 p-6 dark:bg-white ">
+        {/* Left Section: Technologies */}
+        <div className="w-full md:w-2/3 lg:w-2/3 flex flex-wrap gap-6 md:ml-4">
+          {["React", "Tailwind CSS", "Node.js & Express.js", "MongoDB", "MySQL", "API Fetching", "Daisy UI", "Next.js", "Redux & Zustand"].map((tech) => (
+            <button
+              key={tech}
+              onClick={() => handleCardClick(tech)}
+              className="block bg-blue-55 shadow-md rounded-xl p-6 text-white hover:scale-105 duration-200 card bg-gray shadow-xl rounded-lg p-4 relative mb-2 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
+              style={{
+                borderWidth: '2px',
+                borderStyle: 'solid',
+                borderRadius: '12px',
+                borderImage: 'linear-gradient(45deg, #10B981, #3B82F6, #9333EA) 1', // Green to Blue to Purple gradient
+              }}
+            >
+              <img
+                src={`/logos/${tech === 'Next.js' ? 'nextjs' : tech === 'Redux & Zustand' ? 'redux' : tech.toLowerCase().replace(/ & /g, '').replace(/\s+/g, '')}.svg`}
+                alt={`${tech} logo`}
+                className="h-14 w-14 mx-auto mb-4"
+              />
+              <h3 className="text-white mb-2">
+                <span className="dark:text-black text-white text-transparent bg-clip-text font-bold">
+                  {tech}
+                </span>
+              </h3>
+              <p className="text-sm transition-colors duration-500 text-slate-400 dark:text-slate-600">{descriptions[tech]}</p>
+            </button>
+          ))}
+        </div>
 
-  {/* Right Section: Code Snippet */}
-  <div className="w-full md:w-1/3 xl:w-1/3 p-4 mt-4 md:mt-18 md:px-6 md:mb-32">
-    {content && (
-      <div
-        ref={codeContainerRef}
-        className="bg-blue-55 text-white container mx-auto shadow-md rounded-lg p-6 mb-0 ml-2"
-      >
-        <img
-          src={content.logo}
-          alt={`${content.title} logo`}
-          className="h-20 w-20 mx-auto mb-4 animate-spin-slow"
-        />
-        <h2 className="text-white text-2xl mb-2 text-white dark:text-black">
-          {content.title}
-        </h2>
-        <p className="transition-colors duration-500 text-slate-400 dark:text-slate-600">{content.description}</p>
-        <div className="relative">
-          {/* Code Snippet */}
-          <pre
-            ref={codeContainerRef}
-            className=" p-4 rounded-lg  overflow-x-auto mt-4 border border-gray-700 dark:bg-gray-900 text-white"
-            style={{ maxHeight: '300px', overflowY: 'auto' }} // Add max height and scroll for code only
-          >
-            <code className="whitespace-pre-wrap text-sm leading-relaxed">
-              {typedCode
-                .split("\n")
-                .map((line, index) => (
-                  <div key={index} className="flex items-start">
-                    {/* Line Numbers */}
-                    <span className="text-gray-500 pr-4 select-none">
-                      {index + 1}
-                    </span>
-                    {/* Code Line */}
-                    <span className="text-sky-300">{line}</span>
-                  </div>
-                ))}
-            </code>
-          </pre>
+        {/* Right Section: Code Snippet */}
+        <div className="w-full md:w-2/3 lg:w-1/3 p-4 md:px-6">
+          {content && (
+            <div
+              ref={codeContainerRef}
+              className="text-white container mx-auto shadow-md rounded-lg p-6 mb-0 "
+            >
+              <img
+                src={content.logo}
+                alt={`${content.title} logo`}
+                className="h-20 w-20 mx-auto mb-4 animate-spin-slow"
+              />
+              <h2 className="text-white text-2xl mb-2 text-white dark:text-black">
+                {content.title}
+              </h2>
+              <p className="transition-colors duration-500 text-slate-400 dark:text-slate-600">{content.description}</p>
+              <div className="relative">
+                {/* Code Snippet */}
+                <pre
+                  ref={codeContainerRef}
+                  className=" p-4 rounded-lg  overflow-x-auto mt-4 border border-gray-700 dark:bg-gray-900 text-white"
+                  style={{ maxHeight: '300px', overflowY: 'auto' }} // Add max height and scroll for code only
+                >
+                  <code className="whitespace-pre-wrap text-sm leading-relaxed">
+                    {typedCode
+                      .split("\n")
+                      .map((line, index) => (
+                        <div key={index} className="flex items-start">
+                          {/* Line Numbers */}
+                          <span className="text-gray-500 pr-4 select-none">
+                            {index + 1}
+                          </span>
+                          {/* Code Line */}
+                          <span className="text-sky-300">{line}</span>
+                        </div>
+                      ))}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-    )}
-  </div>
-</div>
-
-
-
-
-      
-
-
-
-
     </>
   );
 }

@@ -42,11 +42,25 @@ function Navbar() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const releaseDate = new Date("2025-03-01"); // Set your target release date
+  const [daysLeft, setDaysLeft] = useState(0);
 
+  useEffect(() => {
+    const updateDaysLeft = () => {
+      const today = new Date();
+      const timeDiff = releaseDate - today;
+      setDaysLeft(Math.max(0, Math.ceil(timeDiff / (1000 * 60 * 60 * 24))));
+    };
+
+    updateDaysLeft(); // Initial calculation
+    const interval = setInterval(updateDaysLeft, 1000 * 60 * 60 * 24); // Update daily
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
   return (
     <nav
       className={`${
-        isSticky ? "bg-slate-900 shadow-lg" : "bg-slate-900"
+        isSticky ? "bg-slate-800 shadow-lg" : "bg-slate-900"
       } dark:bg-slate-900 dark:bg-gradient-to-l from-gray-200 via-fuchsia-100 to-stone-300 text-base-content sticky top-0 flex h-16 z-30 w-full justify-center bg-opacity-90 backdrop-blur transition-shadow duration-100`}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
@@ -61,7 +75,40 @@ function Navbar() {
             Technomania Labs
           </span>
         </a>
+        <div className="flex justify-center items-center w-full max-w-40 sm:max-w-sm">
+      <a
+        className="tooltip tooltip-accent relative flex flex-col w-full"
+        href="https://github.com/saadeghi/daisyui/discussions/3246"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-tip="Technomania Labs - Try the beta version"
+      >
+        {/* Progress percentage label */}
+        <div
+          className="text-[0.6rem] absolute font-sans text-white dark:text-black -top-4 -translate-x-1/2 rtl:translate-x-1/2"
+          style={{ insetInlineStart: "92%" }}
+        >
+          92%
+        </div>
 
+        {/* Progress bar */}
+        <progress
+          className="progress  w-full"
+          max="100"
+          value="92"
+          style={{
+            backgroundColor: "#d1fae5", // Tailwind green-100 (background)
+            border: "1px solid #86efac", // Tailwind green-300 (border)
+            color: "#4ade80", // Tailwind green-400 (progress bar color)
+          }}
+        ></progress>
+
+        {/* Progress description with dynamic days */}
+        <div className="text-white font-sans dark:text-black text-[0.6rem] tracking-wide absolute -bottom-4 text-center">
+          Technomania Labs 1.0.28 will be available in {daysLeft} days
+        </div>
+      </a>
+    </div>
         {/* Hamburger Icon for Mobile */}
         <button
           onClick={toggleMenu}
