@@ -3,7 +3,7 @@ import "./styles.css"; // Importing external styles for the galaxy background an
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+import { learningPaths, programmingPaths } from "../data";
 const Documentation = () => {
   const notes = [
     {
@@ -72,7 +72,7 @@ const Documentation = () => {
         <div className="relative text-white py-20 px-10 flex items-center justify-center rounded-lg mb-12">
           <div className="relative">
             <img
-              src="/logos/Myimage1.png" // Replace with your image path
+              src="/logos/hero.webp" // Replace with your image path
               alt="Subhashish Nayak"
               className="h-80 w-80 object-cover shadow-2xl"
             />
@@ -96,17 +96,48 @@ const Documentation = () => {
             </div>
           </div>
         </div>
+        <div className="h-screen w-full  bg-gray-100 py-8">
+      {/* Learning Paths Section */}
+      <div className="max-w-7xl mx-auto px-4">
+        <h1 className="text-3xl font-bold font-jakarta text-center mb-8">Choose a Learning Path</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {learningPaths.map((path) => (
+            <div key={path.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h2 className="text-xl font-semibold mb-2">{path.title}</h2>
+              <p className="text-gray-600 mb-4">{path.description}</p>
+              <a href={path.link} className="text-blue-500 font-semibold hover:underline">
+                {path.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
 
-        <h1 className="text-2xl font-mono dark:text-slate-700 text-white mb-8">
+      {/* Programming/CS Subjects Section */}
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-8">Programming/CS Subjects</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {programmingPaths.map((path) => (
+            <a
+              key={path.id}
+              href={path.link}
+              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center"
+            >
+              <h3 className="text-lg font-semibold">{path.title}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    <h1 className="text-2xl font-mono dark:text-slate-700 text-white mb-8">
           Interview Preparation Notes
         </h1>
-
         {/* Slider Section for Notes */}
         <Slider {...sliderSettings} className="w-full">
           {notes.map((note, index) => (
             <div key={index} className="p-4">
               <div
-                className="card bg-gray dark:bg-gradient-to-l from-gray-200 via-fuchsia-200 to-stone-100 text-gray-400 shadow-xl border border-gray-200 rounded-lg p-4 relative hover:scale-105"
+                className="card bg-gradient-to-l from-gray-200 via-fuchsia-200 to-stone-100 text-gray-400 shadow-xl border border-gray-200 rounded-lg p-4 relative hover:scale-105"
                 style={{
                   borderImage: "linear-gradient(90deg, #00ffcc, #00aaff) 1",
                 }}

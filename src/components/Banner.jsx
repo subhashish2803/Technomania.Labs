@@ -2,9 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { Star, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaCode, FaDatabase, FaCloud, FaRobot, FaMobileAlt, FaCube } from "react-icons/fa";
+import PatternedBackground from "./PatternedBackground";
 
 function Banner() {
-  // Initialize content as null
+  // ... (keep your existing state and logic)
   const [typedCode, setTypedCode] = useState("");
   const [codeIndex, setCodeIndex] = useState(0);
   const codeContainerRef = useRef(null);
@@ -246,68 +247,39 @@ function Banner() {
     "Redux & Zustand": "State management tools for React.",
 
   };
-
-
-
   return (
     <>
-      <body className="min-h-screen dark:bg-white  text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
+      <body className="min-h-screen bg-white dark:bg-black text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
         {/* Left Section */}
-        <div className="order-2 md:order-1 w-full md:w-2/3 mt-12 text-white ">
-          <div className="shadow-md rounded-lg p-6 mb-6 container mx-auto ">
-            <h1 className="text-4xl text-white dark:text-black sm:text-5xl relative">
+        <div className="order-2 md:order-1 w-full md:w-2/3 mt-12 text-white">
+        <PatternedBackground>
+          <div className="shadow-md rounded-lg p-6 mb-6 container mx-auto">
+            <h1 className="text-4xl font-sans text-black sm:text-5xl relative">
               Get started with
               <span className="relative inline-block ml-2">
-                <span className="relative z-10 text-green-600 text-4xl sm:text-5xl ">Technomania Labs</span>
-
+                <span className="relative z-10 text-green-600 text-4xl sm:text-5xl">Technomania Labs</span>
               </span>
             </h1>
-            <p className=" my-3 text-slate-400 dark:text-slate-600">"Your Gateway to Full-Stack Brilliance."</p>
-            <div className="flex flex-row items-center space-x-2 font-sans flex-wrap ">
+            <p className="my-3 text-slate-400 dark:text-slate-600">"Your Gateway to Full-Stack Brilliance."</p>
+            <div className="flex flex-row items-center space-x-2 font-sans flex-wrap">
               <img width="20" height="20" src="https://img.icons8.com/emoji/20/check-mark-emoji.png" alt="check-mark-emoji" />
-              <a
-                href="/"
-                className="text-white dark:text-black  text-sm"
-              >
-                Aptitude
-              </a>
+              <a href="/" className="text-black text-sm">Aptitude</a>
               <span className="h-6 text-slate-400 dark:text-black">|</span>
               <img width="20" height="20" src="https://img.icons8.com/emoji/20/check-mark-emoji.png" alt="check-mark-emoji" />
-              <a
-                href="/Documentation"
-                className="text-white dark:text-black  text-sm"
-              >
-                Coding
-              </a>
+              <a href="/Documentation" className="text-black text-sm">Coding</a>
               <span className="h-6 text-slate-400 dark:text-black">|</span>
               <img width="20" height="20" src="https://img.icons8.com/emoji/20/check-mark-emoji.png" alt="check-mark-emoji" />
-              <a
-                href="#"
-                className="text-white dark:text-black  text-sm"
-              >
-                Interview Prep
-              </a>
+              <a href="#" className="text-black text-sm">Interview Prep</a>
               <span className="h-6 text-slate-400 dark:text-black">|</span>
               <img width="20" height="20" src="https://img.icons8.com/emoji/20/check-mark-emoji.png" alt="check-mark-emoji" />
-              <a
-                href="#"
-                className="text-white dark:text-black text-sm sm:text-left"
-              >
-                New Advancement Skills
-              </a>
+              <a href="#" className="text-black text-sm sm:text-left">New Advancement Skills</a>
             </div>
           </div>
-
+          </PatternedBackground>
           <motion.div
-            initial={{ x: '100vw', opacity: 0, scaleX: 0.8 }}  // Slide in from right and start squeezed
-            animate={{ x: 0, opacity: 1, scaleX: 1 }}          // Slide to original position and expand to full width
-            transition={{
-              type: 'spring',
-              stiffness: 80,               // Controls the springiness of the slide-in
-              damping: 25,                 // Controls the spring's resistance as it settles
-              ease: "easeOut",             // Smooth, ease-out effect for final position
-              duration: 2                 // Duration for the entire transition
-            }}
+            initial={{ x: '100vw', opacity: 0, scaleX: 0.8 }}
+            animate={{ x: 0, opacity: 1, scaleX: 1 }}
+            transition={{ type: 'spring', stiffness: 80, damping: 25, ease: "easeOut", duration: 2 }}
             className="relative flex sm:flex-col items-center sm:h-auto justify-center shadow-md md:mt-10 rounded-lg bg-gray-100 px-6 mb-5"
           >
             {/* Grid Background */}
@@ -392,17 +364,18 @@ function Banner() {
                 </div>
               </div>
             </motion.div>
-
           </motion.div>
         </div>
+
+        {/* Right Section: Services */}
         <div className="order-2 md:order-2 w-full md:w-1/3 p-4 mt-12 md:mt-6 md:px-6">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.4 }}
-            className="bg-slate-900 dark:bg-white text-black font-sans p-6 "
+            className="bg-white text-black font-sans p-6"
           >
-            <h2 className="text-2xl font-bold text-white dark:text-black font-sans mb-4">
+            <h2 className="text-2xl font-bold text-black font-jakarta mb-4">
               Our Service Journey
             </h2>
             <div className="relative border-l-2 border-green-500 ml-4">
@@ -417,10 +390,10 @@ function Banner() {
                   <div className="absolute -left-5 w-10 h-10 flex items-center justify-center bg-green-600 rounded-full text-white shadow-lg">
                     {service.icon}
                   </div>
-                  <h3 className="text-md text-white font-sans dark:text-black font-semibold">
+                  <h3 className="text-md ml-2 font-sans text-black font-semibold">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-white font-sans dark:text-black font-sans">
+                  <p className="text-sm ml-2 font-sans text-black font-sans">
                     {service.description}
                   </p>
                 </motion.div>
@@ -428,33 +401,27 @@ function Banner() {
             </div>
           </motion.div>
         </div>
-      </body >
-      <div className="flex flex-wrap md:flex-nowrap items-start gap-6 p-6 dark:bg-white ">
+      </body>
+
+      {/* Technologies and Code Snippet Section */}
+      <div className="flex flex-wrap md:flex-nowrap items-start gap-6 p-6 bg-white">
         {/* Left Section: Technologies */}
         <div className="w-full md:w-2/3 lg:w-2/3 flex flex-wrap gap-6 md:ml-4">
           {["React", "Tailwind CSS", "Node.js & Express.js", "MongoDB", "MySQL", "API Fetching", "Daisy UI", "Next.js", "Redux & Zustand"].map((tech) => (
             <button
               key={tech}
               onClick={() => handleCardClick(tech)}
-              className="block bg-blue-55 shadow-md rounded-xl p-6 text-white hover:scale-105 duration-200 card bg-gray shadow-xl rounded-lg p-4 relative mb-2 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
-              style={{
-                borderWidth: '2px',
-                borderStyle: 'solid',
-                borderRadius: '12px',
-                borderImage: 'linear-gradient(45deg, #10B981, #3B82F6, #9333EA) 1', // Green to Blue to Purple gradient
-              }}
+              className="block bg-blue-55 border-2 border-green-300 p-6 text-white hover:scale-105 duration-200 card bg-gray shadow-xl rounded-lg mb-2 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
             >
               <img
                 src={`/logos/${tech === 'Next.js' ? 'nextjs' : tech === 'Redux & Zustand' ? 'redux' : tech.toLowerCase().replace(/ & /g, '').replace(/\s+/g, '')}.svg`}
                 alt={`${tech} logo`}
                 className="h-14 w-14 mx-auto mb-4"
               />
-              <h3 className="text-white mb-2">
-                <span className="dark:text-black text-white text-transparent bg-clip-text font-bold">
-                  {tech}
-                </span>
+              <h3 className="text-black mb-2">
+                <span className="text-black font-medium">{tech}</span>
               </h3>
-              <p className="text-sm transition-colors duration-500 text-slate-400 dark:text-slate-600">{descriptions[tech]}</p>
+              <p className="text-sm text-slate-900">{descriptions[tech]}</p>
             </button>
           ))}
         </div>
@@ -464,39 +431,47 @@ function Banner() {
           {content && (
             <div
               ref={codeContainerRef}
-              className="text-white container mx-auto shadow-md rounded-lg p-6 mb-0 "
+              className="shadow-lg rounded-xl border-2 border-green-300 p-6 mb-0"
             >
               <img
                 src={content.logo}
                 alt={`${content.title} logo`}
-                className="h-20 w-20 mx-auto mb-4 animate-spin-slow"
+                className="h-16 w-16 mx-auto mb-4"
               />
-              <h2 className="text-white text-2xl mb-2 text-white dark:text-black">
+              <h2 className="text-xl font-semibold text-black mb-2">
                 {content.title}
               </h2>
-              <p className="transition-colors duration-500 text-slate-400 dark:text-slate-600">{content.description}</p>
-              <div className="relative">
+              <p className="text-slate-800">{content.description}</p>
+
+              <div className="relative mt-4">
                 {/* Code Snippet */}
-                <pre
-                  ref={codeContainerRef}
-                  className=" p-4 rounded-lg  overflow-x-auto mt-4 border border-gray-700 dark:bg-gray-900 text-white"
-                  style={{ maxHeight: '300px', overflowY: 'auto' }} // Add max height and scroll for code only
-                >
-                  <code className="whitespace-pre-wrap text-sm leading-relaxed">
-                    {typedCode
-                      .split("\n")
-                      .map((line, index) => (
-                        <div key={index} className="flex items-start">
+                <div className="rounded-lg bg-slate-800 border border-slate-700 shadow-md overflow-hidden">
+                  {/* Header bar like Tailwind Docs */}
+                  <div className="flex items-center space-x-2 bg-slate-700 px-4 py-2">
+                    <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+                    <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                    <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+                  </div>
+
+                  <pre
+                    ref={codeContainerRef}
+                    className="p-4 text-sm font-mono leading-relaxed overflow-x-auto text-slate-300 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-slate-900"
+                    style={{ maxHeight: "300px", overflowY: "auto" }}
+                  >
+                    <code className="whitespace-pre">
+                      {typedCode.split("\n").map((line, index) => (
+                        <div key={index} className="flex">
                           {/* Line Numbers */}
-                          <span className="text-gray-500 pr-4 select-none">
+                          <span className="text-slate-500 pr-4 select-none">
                             {index + 1}
                           </span>
                           {/* Code Line */}
-                          <span className="text-sky-300">{line}</span>
+                          <span className="text-sky-400">{line}</span>
                         </div>
                       ))}
-                  </code>
-                </pre>
+                    </code>
+                  </pre>
+                </div>
               </div>
             </div>
           )}
@@ -505,4 +480,5 @@ function Banner() {
     </>
   );
 }
+
 export default Banner;

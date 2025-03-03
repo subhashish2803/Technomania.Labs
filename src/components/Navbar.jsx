@@ -59,56 +59,36 @@ function Navbar() {
   }, []);
   return (
     <nav
-      className={`${
-        isSticky ? "bg-slate-800 shadow-lg" : "bg-slate-900"
-      } dark:bg-slate-900 dark:bg-gradient-to-l from-gray-200 via-fuchsia-100 to-stone-300 text-base-content sticky top-0 flex h-16 z-30 w-full justify-center bg-opacity-90 backdrop-blur transition-shadow duration-100`}
+      className={`${isSticky ? " bg-amber-100 shadow-lg" : ""
+        } bg-amber-100 text-base-content sticky top-0 flex h-14 z-30 w-full justify-center bg-opacity-90 backdrop-blur transition-shadow duration-100`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4">
+
+
+      <div className="w-full  flex items-center justify-between px-4">
         {/* Logo */}
-        <a href="/" className="flex items-center">
-          <img
-            src="/logos/mylogo.jpg"
-            alt="Technomania Labs Logo"
-            className="h-8 w-8 rounded-full object-cover"
-          />
-          <span className="text-white font-sans dark:text-black ml-2">
-            Technomania Labs
+        <a href="/" className="relative group flex items-center px-3 py-2 rounded-lg">
+          <span className="absolute inset-0 bg-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+
+          <svg
+            className="relative h-6 w-6 md:h-8 md:w-8"
+            width="32"
+            height="32"
+            viewBox="0 0 415 415"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="82.5" y="290" width="250" height="125" rx="62.5" fill="#1AD1A5"></rect>
+            <circle cx="207.5" cy="135" r="130" fill="black" fillOpacity=".3"></circle>
+            <circle cx="207.5" cy="135" r="125" fill="white"></circle>
+            <circle cx="207.5" cy="135" r="56" fill="#007BFF"></circle>
+            <line x1="182.5" y1="115" x2="232.5" y2="115" stroke="white" strokeWidth="10" />
+            <line x1="207.5" y1="115" x2="207.5" y2="165" stroke="white" strokeWidth="10" />
+          </svg>
+
+          <span className="relative font-semibold font-jakarta text-lg md:text-xl ml-2 text-base-content">
+            technomaniaLabs
           </span>
         </a>
-        <div className="flex justify-center items-center w-full max-w-40 max-w-xs sm:max-w-sm">
-      <a
-        className="tooltip tooltip-accent relative flex flex-col w-full"
-        href="https://github.com/saadeghi/daisyui/discussions/3246"
-        target="_blank"
-        rel="noopener noreferrer"
-        data-tip="Technomania Labs - Try the beta version"
-      >
-        {/* Progress percentage label */}
-        <div
-          className="text-[0.6rem] hidden sm:block absolute font-sans text-white dark:text-black -top-4 -translate-x-1/2 rtl:translate-x-1/2"
-          style={{ insetInlineStart: "92%" }}
-        >
-          92%
-        </div>
-
-        {/* Progress bar */}
-        <progress
-          className="hidden sm:block progress w-full rounded-lg"
-          max="100"
-          value="92"
-          style={{
-            backgroundColor: "#d1fae5", // Tailwind green-100 (background)
-            border: "1px solid #86efac", // Tailwind green-300 (border)
-            color: "#4ade80", // Tailwind green-400 (progress bar color)
-          }}
-        ></progress>
-
-        {/* Progress description with dynamic days */}
-        <div className="text-white font-sans dark:text-black text-[0.6rem] tracking-wide absolute -bottom-4 text-center">
-           V1.0.28 will be available in {daysLeft} days
-        </div>
-      </a>
-    </div>
+        
         {/* Hamburger Icon for Mobile */}
         <button
           onClick={toggleMenu}
@@ -130,28 +110,28 @@ function Navbar() {
         </button>
 
         {/* Main Menu (Desktop) */}
-        <div className="hidden md:flex items-center space-x-6 font-sans">
+        <div className="hidden md:flex items-center space-x-6 font-sans ">
           <a
             href="/"
-            className="text-white dark:text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+            className="text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
           >
             Home
           </a>
           <a
             href="/Documentation"
-            className="text-white dark:text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+            className="text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
           >
             Documentation
           </a>
           <a
             href="#"
-            className="text-white dark:text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+            className="text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
           >
             AI Mentor
           </a>
           <a
             href="#"
-            className="text-white dark:text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+            className="text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
           >
             Community
           </a>
@@ -175,86 +155,17 @@ function Navbar() {
                 d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.37 7.87 10.88.57.1.76-.25.76-.54 0-.27-.01-1.16-.01-2.1-3.21.7-3.89-1.55-3.89-1.55-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.75 2.71 1.25 3.37.95.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.44-2.28 1.16-3.08-.12-.28-.5-1.42.1-2.95 0 0 .97-.31 3.17 1.18.92-.26 1.92-.4 2.91-.4s1.99.14 2.91.4c2.2-1.49 3.17-1.18 3.17-1.18.6 1.53.22 2.67.1 2.95.72.8 1.16 1.82 1.16 3.08 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.03.78 2.08 0 1.5-.01 2.71-.01 3.08 0 .3.19.65.77.54C20.71 21.37 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"
               />
             </svg>
-          </a>
 
-          {/* Theme Toggle Button */}
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-slate-300 hover:bg-slate-500"
-            aria-label="Toggle Theme"
-          >
-            {isDarkTheme ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="5"
-                  className="fill-yellow-400 stroke-yellow-500"
-                />
-                <line x1="12" y1="1" x2="12" y2="3" className="stroke-yellow-500" />
-                <line x1="12" y1="21" x2="12" y2="23" className="stroke-yellow-500" />
-                <line
-                  x1="4.22"
-                  y1="4.22"
-                  x2="5.64"
-                  y2="5.64"
-                  className="stroke-yellow-500"
-                />
-                <line
-                  x1="18.36"
-                  y1="18.36"
-                  x2="19.78"
-                  y2="19.78"
-                  className="stroke-yellow-500"
-                />
-                <line x1="1" y1="12" x2="3" y2="12" className="stroke-yellow-500" />
-                <line x1="21" y1="12" x2="23" y2="12" className="stroke-yellow-500" />
-                <line
-                  x1="4.22"
-                  y1="19.78"
-                  x2="5.64"
-                  y2="18.36"
-                  className="stroke-yellow-500"
-                />
-                <line
-                  x1="18.36"
-                  y1="5.64"
-                  x2="19.78"
-                  y2="4.22"
-                  className="stroke-yellow-500"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path
-                  d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
-                  className="fill-sky-500"
-                />
-              </svg>
-            )}
-          </button>
+
+          </a>
+          
+
         </div>
 
         {/* Mobile Menu with Animation */}
         <div
-          className={`${
-            menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-          } md:hidden absolute top-16 left-0 w-full bg-slate-900 text-white py-4 space-y-4 transition-all duration-500 ease-in-out overflow-hidden`}
+          className={`${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            } md:hidden absolute top-16 left-0 w-full bg-slate-900 text-white py-4 space-y-4 transition-all duration-500 ease-in-out overflow-hidden`}
         >
           <a href="/" className="block px-4 py-2 hover:bg-sky-400">
             Home
@@ -268,16 +179,10 @@ function Navbar() {
           <a href="#" className="block px-4 py-2 hover:bg-sky-400">
             Community
           </a>
-          <div className="space-y-2 mt-4">
-            <button
-              className="w-full text-left text-sky-400"
-              onClick={toggleTheme}
-            >
-              Toggle Theme
-            </button>
-          </div>
+
         </div>
       </div>
+      
     </nav>
   );
 }

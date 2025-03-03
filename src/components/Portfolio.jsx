@@ -134,7 +134,7 @@ const Experience = () => {
           animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="text-white font-mono text-sm md:text-base text-center">June 2024 - Sep 2024</p>
+          <p className="text-white font-mono text-xs md:text-base text-center">June 2024 - Sep 2024</p>
           <p className="text-white text-xs md:text-base  font-mono text-right">
             Internship at [@OCTANET pvt.ltd ] - Worked on [Realife Industrial Projects/Fullstack Developer]
           </p>
@@ -272,8 +272,8 @@ const Certifications = () => {
             <div className="col-start-1 row-start-1 grid place-content-center tracking-widest text-white">#05</div>
           </div>
 
-          <p className="text-white text-sm font-mono md:text-base">2023 - 2024</p>
-          <p className="text-white text-sm font-mono md:text-base">
+          <p className="text-gray-300 text-sm font-mono md:text-base">2023 - 2024</p>
+          <p className=" text-sm font-mono md:text-base">
             Accenture data analytics job simulation and data visualization
           </p><span className="flex flex-wrap gap-2 font-mono bg-[#A100FF] text-black px-3 py-1 rounded-md text-sm">
           Accenture
@@ -291,8 +291,8 @@ const Certifications = () => {
             <div className="col-start-1 row-start-1 grid place-content-center tracking-widest text-white">#06</div>
           </div>
 
-          <p className="text-white font-mono text-sm md:text-base">2024 - 2025</p>
-          <p className="text-white font-mono text-sm md:text-base">
+          <p className="text-gray-300 font-mono text-sm md:text-base">2024 - 2025</p>
+          <p className="text-gray-300 font-mono text-sm md:text-base">
             Unstop's Got Latent Certificate of Participation [Shortlisted]
           </p><span className="flex flex-wrap gap-2 bg-[#1C8ADB] text-white px-3 py-1 font-mono rounded-md text-sm">
             Unstop

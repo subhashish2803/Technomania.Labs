@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css"; // Importing styles for the carousel
+import PatternedBackground from "./PatternedBackground";
 
 const ExpertiseCarousel = () => {
   const expertiseItems = [
@@ -59,32 +60,38 @@ const ExpertiseCarousel = () => {
   };
 
   return (
-    <div id="our_expertise" className="expertise mx-auto p-6 bg-white">
-      <h2 className="text-3xl lg:text-4xl text-black font-sans text-center text-md font-bold mb-6 md:mb-14 lg:mb-20">
-        Our Expertise
-      </h2>
+    <PatternedBackground>
+      <div id="our_expertise" className="expertise mx-auto p-6">
+        <h2 className="text-3xl lg:text-4xl text-black font-sans text-center text-md font-bold mb-6 md:mb-14 lg:mb-20">
+          Our Expertise
+        </h2>
 
-      <Carousel
-        responsive={responsive}
-        arrows={true}
-        infinite={true}
-        className="react-multi-carousel-list carousel-container expertise"
-        dir="ltr"
-      >
-        {expertiseItems.map((item, index) => (
-          <div
-            key={index}
-            className="bg-black dark:bg-white shadow-lg rounded-lg p-6 md:p-10 flex flex-col justify-between items-center mb-6 mx-4"
-            style={{ minHeight: "350px" }}
-          >
-            <div className="text-white dark:text-black text-center">
-              <h5 className="text-3xl font-sans mb-4">{item.title}</h5>
-              <p className="text-sm font-sans sm:text-lg">{item.description}</p>
+        <Carousel
+          className="react-multi-carousel-list carousel-container expertise"
+          dir="ltr"
+          responsive={responsive}
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={2000}
+          keyBoardControl={true}
+          showDots={false}
+          arrows={true}
+        >
+          {expertiseItems.map((item, index) => (
+            <div
+              key={index}
+              className="bg-black dark:bg-white shadow-lg rounded-lg p-6 md:p-10 flex flex-col justify-between items-center mb-6 mx-4"
+              style={{ minHeight: "350px" }}
+            >
+              <div className="text-white dark:text-black text-center">
+                <h5 className="text-3xl font-segoe mb-4">{item.title}</h5>
+                <p className="text-sm font-sans sm:text-lg">{item.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </Carousel>
-    </div>
+          ))}
+        </Carousel>
+      </div>
+    </PatternedBackground>
   );
 };
 
