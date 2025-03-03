@@ -84,7 +84,7 @@ function Navbar() {
             <line x1="207.5" y1="115" x2="207.5" y2="165" stroke="white" strokeWidth="10" />
           </svg>
 
-          <span className="relative font-semibold font-jakarta text-lg md:text-xl ml-2 text-base-content">
+          <span className="relative font-semibold font-jakarta text-lg md:text-xl text-black ml-2 ">
             technomaniaLabs
           </span>
         </a>
@@ -92,7 +92,7 @@ function Navbar() {
         {/* Hamburger Icon for Mobile */}
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 text-white dark:text-black"
+          className="md:hidden p-2 text-black"
           aria-label="Toggle menu"
         >
           <svg
