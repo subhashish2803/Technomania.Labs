@@ -18,51 +18,48 @@ function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-6">
           {/* Logo Section */}
           <div className="flex flex-col items-start justify-start pb-4">
-  <div className="flex items-center">
-    <svg
-      className="relative h-6 w-6 md:h-8 md:w-8"
-      width="32"
-      height="32"
-      viewBox="0 0 415 415"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect x="82.5" y="290" width="250" height="125" rx="62.5" fill="#1AD1A5"></rect>
-      <circle cx="207.5" cy="135" r="130" fill="black" fillOpacity=".3"></circle>
-      <circle cx="207.5" cy="135" r="125" fill="white"></circle>
-      <circle cx="207.5" cy="135" r="56" fill="#007BFF"></circle>
-      <line x1="182.5" y1="115" x2="232.5" y2="115" stroke="white" strokeWidth="10" />
-      <line x1="207.5" y1="115" x2="207.5" y2="165" stroke="white" strokeWidth="10" />
-    </svg>
-    <span className="relative font-bold font-jakarta text-lg md:text-xl text-black ml-2">
-      technomaniaLabs
-    </span>
-  </div>
+            <div className="flex items-center">
+              <svg
+                className="relative h-6 w-6 md:h-8 md:w-8"
+                width="32"
+                height="32"
+                viewBox="0 0 415 415"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="82.5" y="290" width="250" height="125" rx="62.5" fill="#1AD1A5"></rect>
+                <circle cx="207.5" cy="135" r="130" fill="black" fillOpacity=".3"></circle>
+                <circle cx="207.5" cy="135" r="125" fill="white"></circle>
+                <circle cx="207.5" cy="135" r="56" fill="#007BFF"></circle>
+                <line x1="182.5" y1="115" x2="232.5" y2="115" stroke="white" strokeWidth="10" />
+                <line x1="207.5" y1="115" x2="207.5" y2="165" stroke="white" strokeWidth="10" />
+              </svg>
+              <span className="relative font-bold font-jakarta text-lg md:text-xl text-black ml-2">
+                technomaniaLabs
+              </span>
+            </div>
 
-  <div className="container mx-auto px-6 mt-4">
-    <div className="flex flex-col items-center text-center">
-      {/* Heading */}
-      <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-400 via-teal-500 to-green-600 text-transparent bg-clip-text text-end mb-6">
-      Empowering the Future of Learning with Technomania Labs
-      </h2>
+            <div className="container mx-auto px-6 mt-2">
+              <div className="flex flex-col items-center text-center">
+                {/* Heading */}
+                <h2 className="text-md font-semibold font-sans bg-gradient-to-r from-blue-400 via-teal-500 to-green-600 text-transparent bg-clip-text mb-6">
+                  Empowering the Future of Learning with Technomania Labs
+                </h2>
 
-      {/* Main description */}
-      <p className="text-sm md:text-base text-gray-700 mb-6">
-        We help students to prepare for placements with the best study material, online classes,
-        Sectional Statistics for better focus, and Success stories & tips by Toppers on Technomania Labs.
-      </p>
+                {/* Main description */}
+                <p className="text-xs sm:text-base text-gray-700 mb-6">
+                  We help students to prepare for placements with the best study material, online classes,
+                  Sectional Statistics for better focus, and Success stories & tips by Toppers on Technomania Labs.
+                </p>
 
-      {/* Footer text */}
-      <div className="text-xs md:text-sm text-gray-700">
-        <p className="font-sans">
-          Technomania Labs Powered by Metis Eduventures Private Limited
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
+                {/* Footer text */}
+                <div className="text-xs sm:text-sm text-gray-700">
+                  <p className="font-sans">
+                    Technomania Labs Powered by Metis Eduventures Private Limited
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Companies Section */}
           <div className="space-y-2 col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-1">
@@ -88,7 +85,6 @@ function Footer() {
                 <li><a href="https://www.hcltech.com" target="_blank" className="hover:text-black">HCL</a></li>
                 <li><a href="https://www.tcs.com/ninja" target="_blank" className="hover:text-black">TCS Ninja</a></li>
                 <li><a href="https://www.tcs.com/ninja" target="_blank" className="hover:text-black">ZOHO</a></li>
-
               </ul>
             </div>
           </div>
@@ -104,7 +100,7 @@ function Footer() {
           </div>
 
           {/* Contact Info Section */}
-          <div className="pb-4">
+          <div className="pb-4 sm:col-span-2 md:col-span-1 lg:col-span-1">
             <h3 className="font-semibold text-lg text-gray-800">Contact Info</h3>
             <ul className="space-y-2 text-sm">
               <li><a href="tel:+917752025571" className="hover:text-black">+91-7752025571</a></li>
