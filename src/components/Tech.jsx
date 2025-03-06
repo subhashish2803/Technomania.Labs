@@ -92,6 +92,7 @@ function Tech() {
         </div>
       </div>
     </div>
+    
   );
 }
 
