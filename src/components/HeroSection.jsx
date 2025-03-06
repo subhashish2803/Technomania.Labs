@@ -53,7 +53,7 @@ function HeroSection() {
                         ></div>
                         <h3 className="text-lg sm:text-xl font-semibold text-gray-800">Aptitude</h3>
                         <p className="text-gray-600 mt-2 text-sm sm:text-base">Learn aptitude from basic to pro with PrepInsta Prime.</p>
-                        <button className="mt-4 bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 w-full sm:w-auto">
+                        <button className="mt-4 bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800">
                             Prepare Now →
                         </button>
                     </div>
@@ -72,7 +72,7 @@ function HeroSection() {
                         ></div>
                         <h3 className="text-lg sm:text-xl font-semibold text-gray-800">CS Subjects</h3>
                         <p className="text-gray-600 mt-2 text-sm sm:text-base">Prepare for CS subjects and excel in your chosen field.</p>
-                        <button className="mt-4 bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 w-full sm:w-auto">
+                        <button className="mt-4 bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 ">
                             Prepare Now →
                         </button>
                     </div>
@@ -101,7 +101,7 @@ function HeroSection() {
                         ></div>
                         <h3 className="text-lg sm:text-xl font-semibold text-gray-800">Programming</h3>
                         <p className="text-gray-600 mt-2 text-sm sm:text-base">Learn and become a pro in programming.</p>
-                        <button className="mt-4 bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 w-full sm:w-auto">
+                        <button className="mt-4 bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 ">
                             Get Started →
                         </button>
                     </div>
@@ -120,7 +120,7 @@ function HeroSection() {
                         ></div>
                         <h3 className="text-lg sm:text-xl font-semibold text-gray-800">Interview</h3>
                         <p className="text-gray-600 mt-2 text-sm sm:text-base">HR, puzzles, group discussions, and more.</p>
-                        <button className="mt-4 bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 w-full sm:w-auto">
+                        <button className="mt-4 bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 ">
                             Prepare Now →
                         </button>
                     </div>
