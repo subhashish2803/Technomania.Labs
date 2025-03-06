@@ -6,6 +6,8 @@
 
 @import "tailwindcss";
 @plugin "daisyui";
+@import '@fontsource/pacifico';
+@import '@fontsource/bebas-neue';
 
 
 @layer utilities {
@@ -15,7 +17,20 @@
   .font-segoe {
     font-family: 'Segoe UI', sans-serif;
   }
+  .font-fredoka {
+    font-family: "Fredoka", sans-serif;
+  }
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+  }
+  .font-pacifico {
+    font-family: "Pacifico", cursive;
+  }
+  .font-bebas {
+    font-family: "Bebas Neue", sans-serif;
+  }
 }
+
 
 /* Asyncanimations */
 @keyframes moveContainer {

@@ -5,6 +5,7 @@ import Banner from '../components/Banner'
 import ExpertiseCarousel from '../components/ExpertiseCrousel'
 import Tech from '../components/Tech'
 import Footer from '../components/Footer'
+import HeroSection from '../components/HeroSection'
 
 
 
@@ -22,6 +23,7 @@ function Home() {
         <ExpertiseCarousel/>
         
         <Tech/>
+        <HeroSection/>
         <Footer/>
     </div>
     </>

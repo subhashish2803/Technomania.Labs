@@ -6,7 +6,7 @@ function Footer() {
       <div className="w-full px-4">
         {/* Top Section with Logo */}
         <div
-          className="w-full px-4 bg-no-repeat min-h-[250px] py-8 brightness-110 contrast-125"
+          className="w-full px-4 bg-no-repeat min-h-[320px] py-8 brightness-110 contrast-125"
           style={{
             backgroundImage: "url('/logos/Untitled design (2).png')",
             backgroundSize: "contain",  // Keeps the image's original size
@@ -33,16 +33,16 @@ function Footer() {
                 <line x1="182.5" y1="115" x2="232.5" y2="115" stroke="white" strokeWidth="10" />
                 <line x1="207.5" y1="115" x2="207.5" y2="165" stroke="white" strokeWidth="10" />
               </svg>
-              <span className="relative font-bold font-jakarta text-lg md:text-xl text-black ml-2">
+              <span className="relative font-bold font-jakarta text-lg md:text-xl text-black ">
                 technomaniaLabs
               </span>
             </div>
 
-            <div className="container mx-auto px-6 mt-2">
+            <div className="container mx-auto px-6 mt-4">
               <div className="flex flex-col items-center text-center">
                 {/* Heading */}
                 <h2 className="text-md font-semibold font-sans bg-gradient-to-r from-blue-400 via-teal-500 to-green-600 text-transparent bg-clip-text mb-6">
-                  Empowering the Future of Learning with Technomania Labs
+                Empowering the Future of Learning with Technomania Labs
                 </h2>
 
                 {/* Main description */}
