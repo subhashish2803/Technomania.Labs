@@ -47,7 +47,7 @@ function Tech() {
     <div className="m-auto p-8 bg-white sm:mt-12">
       <div className="flex flex-col max-w-2xl text-center m-auto mb-6">
         <h2 className="text-3xl lg:text-4xl text-black font-sans text-center text-md font-bold mb-6">Tech We Love</h2>
-        <p className=" text-black font-sans text-md font-sans text-center mb-4">
+        <p className=" text-black  text-md font-sans text-center mb-4">
           Discovering and Celebrating the Best in Technology.
         </p>
       </div>
@@ -58,7 +58,7 @@ function Tech() {
           <div
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`border transition duration-300 cursor-pointer mr-1 px-4 py-2 mt-2 rounded-lg border-1 border-black ${
+            className={` transition duration-300 cursor-pointer mr-1 px-4 py-2 mt-2 rounded-lg border-1 border-black ${
               selectedCategory === category ? "bg-black text-white" : "bg-white text-black"
             }`}
           >
@@ -70,12 +70,26 @@ function Tech() {
       {/* Tech Stack Container */}
       <div className="relative p-4 rounded-xl shadow-lg bg-white">
         {/* Gradient Borders in Corners */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-8 h-8 bg-gradient-to-br from-pink-400 to-transparent rounded-tl-xl"></div>
-          <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-bl from-pink-400 to-transparent rounded-tr-xl"></div>
-          <div className="absolute bottom-0 left-0 w-8 h-8 bg-gradient-to-tr from-pink-400 to-transparent rounded-bl-xl"></div>
-          <div className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-pink-400 to-transparent rounded-br-xl"></div>
-        </div>
+        <div
+                            className="absolute top-0 right-0 w-70 h-28 rounded-tr-2xl"
+                            style={{
+                                backgroundImage:
+                                    "linear-gradient(transparent 90%, rgba(16, 185, 129, 0.2) 10%), linear-gradient(90deg, transparent 90%, rgba(16, 185, 129, 0.2) 10%)",
+                                backgroundSize: "20px 20px",
+                                backgroundRepeat: "repeat",
+                                opacity: 0.4,
+                            }}
+                        ></div>
+                        <div
+                            className="absolute buttom-0 left-0 w-70 h-25 rounded-tr-2xl"
+                            style={{
+                                backgroundImage:
+                                    "linear-gradient(transparent 90%, rgba(16, 185, 129, 0.2) 10%), linear-gradient(90deg, transparent 90%, rgba(16, 185, 129, 0.2) 10%)",
+                                backgroundSize: "20px 20px",
+                                backgroundRepeat: "repeat",
+                                opacity: 0.4,
+                            }}
+                        ></div>
 
         <div className="flex flex-wrap justify-center items-center gap-8">
           {techStacks
