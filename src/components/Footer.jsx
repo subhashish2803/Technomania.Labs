@@ -16,6 +16,7 @@ function Footer() {
 
         {/* Footer Content Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-6">
+        
           {/* Logo Section */}
           <div className="flex flex-col items-start justify-start pb-4">
             <div className="flex items-center">

@@ -46,7 +46,7 @@ function Tech() {
   return (
     <div className="m-auto p-8 bg-white sm:mt-12">
       <div className="flex flex-col max-w-2xl text-center m-auto mb-6">
-        <h2 className="text-3xl lg:text-4xl text-black font-sans text-center text-md font-bold mb-6">Tech We Love</h2>
+        <h2 className="text-3xl sm:text-4xl font-sans font-semibold text-gray-900 text-center mb-6">Tech We Love</h2>
         <p className=" text-black  text-md font-sans text-center mb-4">
           Discovering and Celebrating the Best in Technology.
         </p>

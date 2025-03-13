@@ -6,6 +6,7 @@ import Banner from '../components/Banner'
 import Tech from '../components/Tech'
 import Footer from '../components/Footer'
 import HeroSection from '../components/HeroSection'
+import InstallationGuide from '../components/InstallationGuide'
 
 
 
@@ -24,6 +25,7 @@ function Home() {
         
         <Tech/>
         <HeroSection/>
+        <InstallationGuide/>
         <Footer/>
     </div>
     </>
