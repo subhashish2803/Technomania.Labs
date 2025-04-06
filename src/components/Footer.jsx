@@ -111,20 +111,13 @@ function Footer() {
               <li><a href="tel:+917752025571" className="hover:text-black">+91-7752025571</a></li>
               <li><a href="https://github.com/subhashish2803" target="_blank" className="hover:text-black">Whatsapp/Instagram</a></li>
             </ul>
-            <div className="pb-4">
-            <h3 className="font-semibold text-lg text-gray-800">Location</h3>
-            <p className="text-sm">INDIA</p>
-            <p className="mt-2 text-black">Technomania Labs Pvt. Ltd., Patia, Bhubaneswar-751024</p>
-          </div>
           </div>
 
           {/* Location Section */}
           <div className="pb-4">
-            <h3 className="font-semibold text-lg text-gray-800">All Exams Dashboard</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="tel:+917752025571" className="hover:text-black">HirePro Dashboard</a></li>
-              <li><a href="https://github.com/subhashish2803" target="_blank" className="hover:text-black">Whatsapp/Instagram</a></li>
-            </ul>
+            <h3 className="font-semibold text-lg text-gray-800">Location</h3>
+            <p className="text-sm">INDIA</p>
+            <p className="mt-2 text-black">Technomania Labs Pvt. Ltd., Patia, Bhubaneswar-751024</p>
           </div>
         </div>
 
