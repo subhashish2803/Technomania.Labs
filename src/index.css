@@ -98,3 +98,11 @@ body {
   background-color: var(--primary-bg);
   color: var(--primary-color);
 }
+/* Add this to global CSS */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-slow {
+  animation: scroll-left 40s linear infinite;
+}

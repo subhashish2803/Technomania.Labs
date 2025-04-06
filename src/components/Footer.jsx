@@ -6,7 +6,7 @@ function Footer() {
       <div className="w-full px-4">
         {/* Top Section with Logo */}
         <div
-          className="w-full px-4 bg-no-repeat min-h-[320px] py-8 brightness-110 contrast-125"
+          className="w-full px-4 bg-no-repeat min-h-[320px] py-8 brightness-110 contrast-125 rounded-md"
           style={{
             backgroundImage: "url('/logos/Untitled design (2).png')",
             backgroundSize: "contain",  // Keeps the image's original size
@@ -55,7 +55,7 @@ function Footer() {
                 {/* Footer text */}
                 <div className="text-xs sm:text-sm text-gray-700">
                   <p className="font-sans">
-                    Technomania Labs Powered by Metis Eduventures Private Limited
+                    Technomania Labs Powered by Skillanto Private Limited
                   </p>
                 </div>
               </div>
@@ -93,12 +93,16 @@ function Footer() {
           {/* Get in Touch Section */}
           <div className="pb-4">
             <h3 className="font-semibold text-lg text-gray-800">Get in Touch</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 mt-2 text-sm">
               <li><a href="https://github.com/subhashish2803" target="_blank" className="hover:text-black">Github</a></li>
               <li><a href="https://www.linkedin.com/in/subhashishnayak" target="_blank" className="hover:text-black">LinkedIn</a></li>
               <li><a href="https://twitter.com/subhashish2803" target="_blank" className="hover:text-black">Twitter</a></li>
+              <li><a href="https://github.com/subhashish2803" target="_blank" className="hover:text-black">Youtube</a></li>
+              <li><a href="https://www.linkedin.com/in/subhashishnayak" target="_blank" className="hover:text-black">Faceboook</a></li>
+              <li><a href="https://twitter.com/subhashish2803" target="_blank" className="hover:text-black">Telegram</a></li>
             </ul>
           </div>
+          
 
           {/* Contact Info Section */}
           <div className="pb-4 sm:col-span-2 md:col-span-1 lg:col-span-1">
@@ -107,13 +111,20 @@ function Footer() {
               <li><a href="tel:+917752025571" className="hover:text-black">+91-7752025571</a></li>
               <li><a href="https://github.com/subhashish2803" target="_blank" className="hover:text-black">Whatsapp/Instagram</a></li>
             </ul>
+            <div className="pb-4">
+            <h3 className="font-semibold text-lg text-gray-800">Location</h3>
+            <p className="text-sm">INDIA</p>
+            <p className="mt-2 text-black">Technomania Labs Pvt. Ltd., Patia, Bhubaneswar-751024</p>
+          </div>
           </div>
 
           {/* Location Section */}
           <div className="pb-4">
-            <h3 className="font-semibold text-lg text-gray-800">Location</h3>
-            <p className="text-sm">INDIA</p>
-            <p className="mt-2 text-black">Technomania Labs Pvt. Ltd., Patia, Bhubaneswar-751024</p>
+            <h3 className="font-semibold text-lg text-gray-800">All Exams Dashboard</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="tel:+917752025571" className="hover:text-black">HirePro Dashboard</a></li>
+              <li><a href="https://github.com/subhashish2803" target="_blank" className="hover:text-black">Whatsapp/Instagram</a></li>
+            </ul>
           </div>
         </div>
 

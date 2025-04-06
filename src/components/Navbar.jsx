@@ -119,24 +119,40 @@ function Navbar() {
         </button>
 
         {/* Main Menu (Desktop) */}
-        <div className="hidden md:flex items-center space-x-6 font-sans">
+        <div className="hidden md:flex items-center space-x-4 font-sans">
+          {/* Home */}
+  <a
+    href="/"
+    className="flex items-center gap-1 text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-home">
+      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+    Home
+  </a>
+
+  {/* Documentation */}
+  <a
+    href="/All Companies"
+    className="flex items-center gap-1 text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-notebook">
+      <path d="M2 6h4"></path>
+      <path d="M2 10h4"></path>
+      <path d="M2 14h4"></path>
+      <path d="M2 18h4"></path>
+      <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+      <path d="M16 2v20"></path>
+    </svg>
+    All Companies
+  </a>
           <a
-            href="/"
-            className="text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+            href="Github"
+            className="flex items-center gap-1 text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
           >
-            Home
-          </a>
-          <a
-            href="/Documentation"
-            className="text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
-          >
-            Documentation
-          </a>
-          <a
-            href="#"
-            className="text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
-          >
-            AI Mentor
+            {<img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="GitHub" />}
+            Github
           </a>
           <a
             href="#"
@@ -145,26 +161,9 @@ function Navbar() {
             Community
           </a>
 
-          <span className="h-6 text-slate-400 dark:text-black">|</span>
+          {/* Vertical Line */}
+      <div className="shrink-0 bg-gray-400 w-[1px] h-6 mx-2 "></div>
 
-          {/* GitHub Link */}
-          <a
-            href="https://github.com/TechnoManiaLabs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-slate-300 hover:bg-slate-500 p-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.37 7.87 10.88.57.1.76-.25.76-.54 0-.27-.01-1.16-.01-2.1-3.21.7-3.89-1.55-3.89-1.55-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.75 2.71 1.25 3.37.95.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.44-2.28 1.16-3.08-.12-.28-.5-1.42.1-2.95 0 0 .97-.31 3.17 1.18.92-.26 1.92-.4 2.91-.4s1.99.14 2.91.4c2.2-1.49 3.17-1.18 3.17-1.18.6 1.53.22 2.67.1 2.95.72.8 1.16 1.82 1.16 3.08 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.03.78 2.08 0 1.5-.01 2.71-.01 3.08 0 .3.19.65.77.54C20.71 21.37 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"
-              />
-            </svg>
-          </a>
         </div>
 
         {/* Mobile Menu with Animation */}

@@ -50,28 +50,11 @@ function Banner() {
     },
     {
       id: 3,
-      title: "Cloud & DevOps",
+      title: "Cloud & Web services",
       description: "Deploying scalable applications using AWS, Docker, Kubernetes, and CI/CD pipelines.",
       icon: <FaCloud />,
     },
-    {
-      id: 4,
-      title: "AI & Machine Learning",
-      description: "Integrating AI models into applications using OpenAI, TensorFlow, and NLP.",
-      icon: <FaRobot />,
-    },
-    {
-      id: 5,
-      title: "Mobile App Development",
-      description: "Developing cross-platform mobile apps using React Native and Flutter.",
-      icon: <FaMobileAlt />,
-    },
-    {
-      id: 6,
-      title: "Web3 & Blockchain",
-      description: "Building decentralized apps (dApps) and smart contracts with Solidity and Ethereum.",
-      icon: <FaCube />,
-    },
+    
   ];
   const [content, setContent] = useState({
     title: "Redux & Zustand",
@@ -334,11 +317,22 @@ function Banner() {
               className="absolute bottom-10 right-8 bg-white shadow-lg rounded-lg px-6 py-3 flex flex-col items-start space-y-2 border-2 border-green-600 w-64 h-auto"
             >
               <div className="flex items-center gap-2">
-                <img
-                  src="/logos/mylogo.jpg"
-                  alt="Technomania Logo"
-                  className="w-8 h-8 rounded-full"
-                />
+              <svg
+                className="relative h-6 w-6 md:h-8 md:w-8"
+                width="32"
+                height="32"
+                viewBox="0 0 415 415"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="82.5" y="290" width="250" height="125" rx="62.5" fill="#1AD1A5"></rect>
+                <circle cx="207.5" cy="135" r="130" fill="black" fillOpacity=".3"></circle>
+                <circle cx="207.5" cy="135" r="125" fill="white"></circle>
+                <circle cx="207.5" cy="135" r="56" fill="#007BFF"></circle>
+                <line x1="182.5" y1="115" x2="232.5" y2="115" stroke="white" strokeWidth="10" />
+                <line x1="207.5" y1="115" x2="207.5" y2="165" stroke="white" strokeWidth="10" />
+                
+              </svg>
+              
                 <div>
                   <div className="rating-container space-y-1">
                     {ratings.map((rating, index) => (

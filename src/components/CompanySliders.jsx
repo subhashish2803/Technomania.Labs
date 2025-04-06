@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const CompanySlider = () => {
+const CompanySliders = () => {
   const scrollRef = useRef(null);
 
   const companies = [
@@ -41,9 +41,7 @@ const CompanySlider = () => {
       
       className="bg-[url('/companylogo/sbc.jpg')] bg-cover bg-center bg-no-repeat py-12 px-4 "
     >
-      <h1 className="text-center text-3xl md:text-5xl  text-black mb-8">
-          Prepare For All Major Companies
-        </h1>
+      
       
     <div className="overflow-hidden w-full bg-gray-50 py-6">
       <div
@@ -68,4 +66,4 @@ const CompanySlider = () => {
   );
 };
 
-export default CompanySlider;
+export default CompanySliders;
