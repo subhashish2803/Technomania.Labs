@@ -95,7 +95,7 @@ function HeroSection() {
                         <p className="text-gray-600 mt-2 text-sm sm:text-base">Prepare for CS subjects and excel in your chosen field.</p>
                         <button className="relative mt-30 bg-black text-white py-2 px-4 rounded-lg hover:scale-105 sm:mt-30">
                             
-                            <span className="relative z-10">Prepare Now →</span>
+                            <span className="relative z-10">Move →</span>
                         </button>
                     </div>
 

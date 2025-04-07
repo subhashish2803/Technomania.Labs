@@ -6,6 +6,8 @@ import Act from "./components/Act";
 import Acts from "./pages/Acts";
 import AptitudeSections from "./pages/AptitudeSections";
 
+import Syla from "./pages/Syla";
+
 
 function App() {
   return (
@@ -15,9 +17,12 @@ function App() {
       <Route path="/All Companies" element={<Acts />} />
       <Route path="/View All Companies" element={<Acts />} />
       <Route path="/Prepare" element={<AptitudeSections />} />
+      <Route path="/Notes" element={<Syla/>} />
       
       
     </Routes>
+    
+  
     </>
   );
 }

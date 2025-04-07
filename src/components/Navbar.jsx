@@ -169,16 +169,39 @@ function Navbar() {
         {/* Mobile Menu with Animation */}
         <div
           className={`${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-            } md:hidden absolute top-16 left-0 w-full bg-slate-900 text-white py-4 space-y-4 transition-all duration-500 ease-in-out overflow-hidden`}
+            } md:hidden absolute top-16 left-0 w-full bg-green-300 text-black py-4 space-y-4 transition-all duration-500 ease-in-out overflow-hidden`}
         >
-          <a href="/" className="block px-4 py-2 hover:bg-sky-400">
-            Home
-          </a>
-          <a href="/Documentation" className="block px-4 py-2 hover:bg-sky-400">
-            Documentation
-          </a>
-          <a href="#" className="block px-4 py-2 hover:bg-sky-400">
-            AI Mentor
+          <a
+    href="/"
+    className="flex items-center gap-1 text-black ml-3 dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-home">
+      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+    Home
+  </a>
+  {/* Documentation */}
+  <a
+    href="/All Companies"
+    className="flex items-center gap-1 text-black ml-3 dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-notebook">
+      <path d="M2 6h4"></path>
+      <path d="M2 10h4"></path>
+      <path d="M2 14h4"></path>
+      <path d="M2 18h4"></path>
+      <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+      <path d="M16 2v20"></path>
+    </svg>
+    All Companies
+  </a>
+  <a
+            href="Github"
+            className="flex items-center gap-1 text-black ml-3 dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+          >
+            {<img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="GitHub" />}
+            Github
           </a>
           <a href="#" className="block px-4 py-2 hover:bg-sky-400">
             Community

@@ -6,10 +6,8 @@ import Banner from '../components/Banner'
 import Tech from '../components/Tech'
 import Footer from '../components/Footer'
 import HeroSection from '../components/HeroSection'
+import Notes from '../components/Notes'
 
-import AptitudeMockTest from '../components/AptitudeMockTest'
-import Act from '../components/Act'
-import AptitudeSection from '../components/AptitudeSection'
 
 
 
@@ -28,7 +26,7 @@ function Home() {
         
         <Tech/>
         <HeroSection/>
-        <AptitudeSection/>
+        <Notes/>
         
         <Footer/>
     </div>
