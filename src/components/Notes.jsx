@@ -15,8 +15,8 @@ function Notes() {
           />
         <div className=" md:flex space-x-6 ml-2">
         
-          <a href="/Notes" className="hover:text-blue-600">Notes</a>
-          <a href="/taskboard" className="hover:text-blue-600">Tasks</a>
+          <a href="/Notes" className="hover:text-blue-600 text-black">Notes</a>
+          <a href="/taskboard" className="hover:text-blue-600 text-black">Tasks</a>
         </div>
       </nav>
 
