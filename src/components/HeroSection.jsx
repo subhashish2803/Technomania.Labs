@@ -13,7 +13,7 @@ function HeroSection() {
                     
 
                     {/* Left Section - Companies Container (70%) */}
-                    <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg w-full lg:w-[70%] h-auto lg:h-[400px]">
+                    <div className="border border-gray-300 dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800  sm:p-8  shadow-lg w-full lg:w-[70%] h-auto lg:h-[400px] ">
                         <h2 className="lg:text-3xl sm:text-xl font-semibold text-black">Companies</h2>
                         <p className="text-gray-600 mt-2 text-sm sm:text-base">
                             Prepare for companies like Cisco, Amazon, TCS, Google with PrepInsta Prime’s company-specific courses.
@@ -45,7 +45,7 @@ function HeroSection() {
                     </div>
 
                     {/* Right Section - Image Container (30%) */}
-                    <img src="/logos/herr.png" alt="Featured" className="w-[400px] h-[400px] lg:h-[400px] shadow-amber-100 object-contain" />
+                    <img src="/logos/note-taking.svg" alt="Featured" className="w-[400px] h-[400px] lg:h-[400px] shadow-amber-100 object-contain" />
                 </div>
 
 
@@ -54,7 +54,7 @@ function HeroSection() {
                     
 
                     {/* Aptitude Card */}
-                    <div className="relative bg-white p-6 rounded-2xl shadow-lg ">
+                    <div className="border border-gray-300 shadow-lg dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800">
                         <div
                             className="absolute top-0 right-0 w-70 h-28 rounded-tr-2xl"
                             style={{
@@ -79,7 +79,7 @@ function HeroSection() {
                     </div>
 
                     {/* CS Subjects Card */}
-                    <div className="relative bg-white p-6 rounded-2xl shadow-lg h-[300px]  ">
+                    <div className="relative shadow-lg h-[300px]  border border-gray-300 dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800 ">
                         
                         <div
                             className="absolute top-0 right-0 w-70 h-28 rounded-tr-2xl"
@@ -100,7 +100,7 @@ function HeroSection() {
                     </div>
 
                     {/* Programming Card */}
-                    <div className="relative bg-white p-6 rounded-2xl shadow-lg h-[300px]">
+                    <div className="relative shadow-lg h-[300px] border border-gray-300 dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800">
                        
                         <div
                             className="absolute bottom-2 right-2 text-black font-bold"
@@ -131,7 +131,7 @@ function HeroSection() {
                     </div>
 
                     {/* Interview Card */}
-                    <div className="relative bg-white p-6 rounded-2xl shadow-lg">
+                    <div className="relative border border-gray-300 dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800 shadow-lg">
                         
                         <div
                             className="absolute top-0 right-0 w-70 h-28 rounded-tr-2xl"

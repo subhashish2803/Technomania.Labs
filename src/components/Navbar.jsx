@@ -147,13 +147,21 @@ function Navbar() {
     </svg>
     All Companies
   </a>
-          <a
-            href="Github"
-            className="flex items-center gap-1 text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
-          >
-            {<img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="GitHub" />}
-            Github
-          </a>
+  <a
+  href="https://github.com/TechnoManiaLabs"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-1 text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
+>
+  <img
+    width="20"
+    height="20"
+    src="https://img.icons8.com/ios-glyphs/30/github.png"
+    alt="GitHub"
+  />
+  Github
+</a>
+
           <a
             href="#"
             className="text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
