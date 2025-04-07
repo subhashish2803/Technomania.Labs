@@ -13,7 +13,7 @@ function HeroSection() {
                     
 
                     {/* Left Section - Companies Container (70%) */}
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800  sm:p-8  shadow-lg w-full lg:w-[70%] h-auto lg:h-[400px] ">
+                    <div className="border border-gray-300 rounded-lg p-5 bg-gray-50 sm:p-8  shadow-lg w-full lg:w-[70%] h-auto lg:h-[400px] ">
                         <h2 className="lg:text-3xl sm:text-xl font-semibold text-black">Companies</h2>
                         <p className="text-gray-600 mt-2 text-sm sm:text-base">
                             Prepare for companies like Cisco, Amazon, TCS, Google with PrepInsta Prime’s company-specific courses.
