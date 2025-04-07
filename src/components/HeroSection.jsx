@@ -54,7 +54,7 @@ function HeroSection() {
                     
 
                     {/* Aptitude Card */}
-                    <div className="border border-gray-300 shadow-lg dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800">
+                    <div className="border border-gray-300 shadow-lg  rounded-lg p-5 bg-gray-50 ">
                         <div
                             className="absolute top-0 right-0 w-70 h-28 rounded-tr-2xl"
                             style={{
@@ -79,7 +79,7 @@ function HeroSection() {
                     </div>
 
                     {/* CS Subjects Card */}
-                    <div className="relative shadow-lg h-[300px]  border border-gray-300 dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800 ">
+                    <div className="relative shadow-lg h-[300px]  border border-gray-300  rounded-lg p-5 bg-gray-50  ">
                         
                         <div
                             className="absolute top-0 right-0 w-70 h-28 rounded-tr-2xl"
@@ -100,7 +100,7 @@ function HeroSection() {
                     </div>
 
                     {/* Programming Card */}
-                    <div className="relative shadow-lg h-[300px] border border-gray-300 dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800">
+                    <div className="relative shadow-lg h-[300px] border border-gray-300  rounded-lg p-5 bg-gray-50 ">
                        
                         <div
                             className="absolute bottom-2 right-2 text-black font-bold"
@@ -131,7 +131,7 @@ function HeroSection() {
                     </div>
 
                     {/* Interview Card */}
-                    <div className="relative border border-gray-300 dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800 shadow-lg">
+                    <div className="relative border border-gray-300  rounded-lg p-5 bg-gray-50  shadow-lg">
                         
                         <div
                             className="absolute top-0 right-0 w-70 h-28 rounded-tr-2xl"

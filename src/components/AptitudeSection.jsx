@@ -69,9 +69,9 @@ const AptitudeSection = () => {
       </h2>
       <div className="space-y-6 max-w-4xl mx-auto">
         {faqs.map((faq, index) => (
-          <div key={index} className="border border-gray-300 dark:border-gray-700 rounded-lg p-5 bg-gray-50 dark:bg-gray-800">
-            <h3 className="text-lg font-semibold text-black dark:text-white mb-2">{faq.question}</h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-line">{faq.answer}</p>
+          <div key={index} className="border border-gray-300  rounded-lg p-5 bg-gray-50">
+            <h3 className="text-lg font-semibold text-black  mb-2">{faq.question}</h3>
+            <p className="text-sm text-gray-700 whitespace-pre-line">{faq.answer}</p>
           </div>
         ))}
       </div>
