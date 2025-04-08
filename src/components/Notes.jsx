@@ -24,8 +24,8 @@ function Notes() {
       <section className="px-6 py-12 max-w-4xl mx-auto text-gray-700">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h2 className="text-6xl font-sans mb-4">
-              VI<span className="text-gray-500">STOFY</span>
+            <h2 className="text-6xl font-sans mb-4 text-black">
+              VIST<span className="text-gray-500">OFY</span>
             </h2>
             <p className="text-lg text-gray-700">
               VISTOFY: The coolest academic notes-sharing platform around!

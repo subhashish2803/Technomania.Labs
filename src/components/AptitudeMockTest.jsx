@@ -8,6 +8,25 @@ const questions = [
   { question: "Convert the following Infix to Postfix expression: W+x*y+(z*a)", options: ["Wxy+*za*+", "Wxy*+(za)*+", "Wxy*+za*+", "W+xy*za"] },
   { question: "What is the time complexity of binary search?", options: ["O(n)", "O(log n)", "O(n log n)", "O(n^2)"] }
 ];
+const faqs = [
+    {
+      question: "What are the most important aptitude topics for placements?",
+      answer: `The most important aptitude topics for placements are categorized into:
+      - Quantitative Aptitude (Percentages, Profit & Loss, Time & Work, etc.)
+      - Logical Reasoning (Puzzles, Blood Relations, Seating Arrangement, etc.)
+      - Verbal Ability (Reading Comprehension, Synonyms & Antonyms, Grammar, etc.)`
+    },
+    {
+      question: "How do I prepare for aptitude tests for placements?",
+      answer: `Start with the basics of each topic and gradually move to advanced problems. 
+      You can check out [this page](#) to begin your preparation. Practice regularly and take mock tests.`
+    },
+    {
+      question: "Is aptitude necessary for placements?",
+      answer: `Yes, aptitude is a crucial part of placement exams. It is usually the first elimination round 
+      in most companies' recruitment process.`
+    }
+  ];
 
 export default function AptitudeMockTest() {
   const [timeLeft, setTimeLeft] = useState(60 * 24); // 24 minutes timer

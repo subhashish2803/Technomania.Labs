@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Note = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const syllabusLinks = [
-    { branch: 'CSE', url: 'https://drive.google.com/file/d/1tDEfpGmiLjuT_QCfl42skYxPelJ3AMVS/view?usp=sharing' },
+    { branch: 'CSE & MCA', url: 'https://drive.google.com/file/d/1tDEfpGmiLjuT_QCfl42skYxPelJ3AMVS/view?usp=sharing' },
     { branch: 'ECE', url: 'https://drive.google.com/file/d/1fE9qyvjlzPeW8PP7Kg_z8ySjkzxEtzQ9/view?usp=sharing' },
     { branch: 'EEE', url: 'https://drive.google.com/file/d/1NHSTTkBaaDVOeoW9CkvCefDvcnbSVHju/view?usp=sharing' },
     { branch: 'EIE', url: 'https://drive.google.com/file/d/1bcWrFey-AJjkuj--SD2OR7cynqpjAmgr/view?usp=sharing' },
@@ -24,8 +25,8 @@ const Note = () => {
       'Engineering Mathematics II',
       'Engineering Physics',
     ],
-    CSE: [
-      'Basic of Mechanical Engineering',
+    MCA: [
+      'Object-Oriented Programming using JAVA',
       'Digital Electronics',
       'Discrete Mathematics',
       'Engineering Economics',
@@ -54,7 +55,6 @@ const Note = () => {
       'Wireless Sensor Networks',
     ],
     ECE: [
-      'Object-Oriented Programming using JAVA',
       'Circuit Theory',
       'Maths -III Complex Numbers',
       'Electronic Devices',
@@ -133,6 +133,13 @@ const Note = () => {
         <p className="text-center text-gray-500 mt-10">No results found for "{searchQuery}"</p>
       )}
     </div>
+    <div className="p-3 p-sm-5 text-[0.8rem]">
+  <Link className="text-var font-bold" to="/resoc">Disclaimer</Link>
+  : Please go through our community guidelines for more information on
+  contributions and sponsorships.
+  <br />
+  <span className="text-var">Contribute to VISTOFY</span>
+</div>
     </div>
   );
 };

@@ -232,7 +232,7 @@ function Banner() {
   };
   return (
     <>
-      <body className="min-h-screen bg-white dark:bg-black text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
+      <body className="min-h-screen bg-gray-50 text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
         {/* Left Section */}
         <div className="order-2 md:order-1 w-full md:w-2/3 mt-12 text-white">
         <PatternedBackground>
@@ -405,7 +405,7 @@ function Banner() {
             <button
               key={tech}
               onClick={() => handleCardClick(tech)}
-              className="block bg-blue-55 border-2 border-green-300 p-6 text-white hover:scale-105 duration-200 card bg-gray shadow-xl rounded-lg mb-2 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
+              className="border border-gray-300 rounded-lg p-5 bg-gray-50 sm:p-8  shadow-lg text-white hover:scale-105 duration-200 card mb-2 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
             >
               <img
                 src={`/logos/${tech === 'Next.js' ? 'nextjs' : tech === 'Redux & Zustand' ? 'redux' : tech.toLowerCase().replace(/ & /g, '').replace(/\s+/g, '')}.svg`}
@@ -425,7 +425,7 @@ function Banner() {
           {content && (
             <div
               ref={codeContainerRef}
-              className="shadow-lg rounded-xl border-2 border-green-300 p-6 mb-0"
+              className="border border-gray-300 rounded-lg p-5 bg-gray-50 sm:p-8  shadow-lg  mb-0"
             >
               <img
                 src={content.logo}

@@ -68,43 +68,31 @@ function Tech() {
       </div>
 
       {/* Tech Stack Container */}
-      <div className="relative p-4 rounded-xl shadow-lg bg-white">
-        {/* Gradient Borders in Corners */}
-        <div
-                            className="absolute top-0 right-0 w-70 h-28 rounded-tr-2xl"
-                            style={{
-                                backgroundImage:
-                                    "linear-gradient(transparent 90%, rgba(16, 185, 129, 0.2) 10%), linear-gradient(90deg, transparent 90%, rgba(16, 185, 129, 0.2) 10%)",
-                                backgroundSize: "20px 20px",
-                                backgroundRepeat: "repeat",
-                                opacity: 0.4,
-                            }}
-                        ></div>
-                        <div
-                            className="absolute buttom-0 left-0 w-70 h-25 rounded-tr-2xl"
-                            style={{
-                                backgroundImage:
-                                    "linear-gradient(transparent 90%, rgba(16, 185, 129, 0.2) 10%), linear-gradient(90deg, transparent 90%, rgba(16, 185, 129, 0.2) 10%)",
-                                backgroundSize: "20px 20px",
-                                backgroundRepeat: "repeat",
-                                opacity: 0.4,
-                            }}
-                        ></div>
+<div className="border border-gray-300 rounded-2xl p-6 sm:p-8 bg-gray-50 shadow-xl">
 
-        <div className="flex flex-wrap justify-center items-center gap-8">
-          {techStacks
-            .filter((tech) => selectedCategory === "Top" || tech.category === selectedCategory)
-            .slice(0, 32)
-            .map((tech) => (
-              <div key={tech.name} className="w-20 h-20 flex justify-center items-center bg-white rounded-lg shadow-md border-2 border-gray-600 relative group">
-                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-black text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {tech.name}
-                </div>
-                <img src={tech.src} alt={tech.name} className="w-12 h-12 object-contain" />
-              </div>
-            ))}
+  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 place-items-center">
+    {techStacks
+      .filter((tech) => selectedCategory === "Top" || tech.category === selectedCategory)
+      .slice(0, 32)
+      .map((tech) => (
+        <div
+          key={tech.name}
+          className="w-20 h-20 bg-white border-2 border-gray-300 rounded-xl flex items-center justify-center shadow-sm relative group hover:shadow-lg transition"
+        >
+          {/* Tooltip */}
+          <div className="absolute -top-9 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+            {tech.name}
+          </div>
+          <img
+            src={tech.src}
+            alt={tech.name}
+            className="w-12 h-12 object-contain"
+          />
         </div>
-      </div>
+      ))}
+  </div>
+</div>
+
     </div>
     
   );
