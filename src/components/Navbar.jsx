@@ -9,7 +9,6 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
-  // Handle theme toggle
   useEffect(() => {
     const handleThemeToggle = () => {
       const newTheme = !isDarkTheme;
@@ -32,10 +31,9 @@ function Navbar() {
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
-  // Sticky navbar effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 50); // Becomes sticky after scrolling 50px
+      setIsSticky(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -43,30 +41,30 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const releaseDate = new Date("2025-03-01"); // Set your target release date
+  const releaseDate = new Date("2025-03-01");
   const [daysLeft, setDaysLeft] = useState(0);
 
   useEffect(() => {
     const updateDaysLeft = () => {
       const today = new Date();
       const timeDiff = releaseDate - today;
-      setDaysLeft(Math.max(0, Math.ceil(timeDiff / (1000 * 60 * 60 * 24)))); // Calculate days left
+      setDaysLeft(Math.max(0, Math.ceil(timeDiff / (1000 * 60 * 60 * 24))));
     };
 
-    updateDaysLeft(); // Initial calculation
-    const interval = setInterval(updateDaysLeft, 1000 * 60 * 60 * 24); // Update daily
+    updateDaysLeft();
+    const interval = setInterval(updateDaysLeft, 1000 * 60 * 60 * 24);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <nav
-      className={`${isSticky ? " bg-amber-100 shadow-lg" : ""} bg-amber-100 text-base-content sticky top-0 flex h-14 z-30 w-full justify-center bg-opacity-90 backdrop-blur transition-shadow duration-100`}
+      className={`${isSticky ? "bg-amber-100 shadow-lg" : ""
+        } bg-amber-100 text-base-content sticky top-0 flex h-14 z-30 w-full justify-center bg-opacity-90 backdrop-blur transition-shadow duration-100`}
     >
       <div className="w-full flex items-center justify-between px-4">
-        {/* Logo and Company Name with "Ready247Academy" underneath */}
-        <a href="/" className="flex items-center  py-2 group">
-          {/* Logo */}
+        {/* Logo and Company Name */}
+        <a href="/" className="flex items-center py-2 group">
           <svg
             className="h-8 w-8 md:h-10 md:w-10"
             width="32"
@@ -82,23 +80,24 @@ function Navbar() {
             <line x1="207.5" y1="115" x2="207.5" y2="165" stroke="white" strokeWidth="10" />
           </svg>
 
-          <div className="flex flex-col">
-            {/* Company Name */}
+          <div className="flex flex-col ml-2">
             <span className="text-md md:text-md font-sans text-black font-semibold tracking-wide">
               technomaniaLabs
             </span>
-
-            {/* Ready247Academy with 247 in red */}
-            <div className="text-xs font-mono text-black">
+            <div className="flex items-center gap-1 text-xs font-mono text-black">
               Ready
-               <span className="text-indigo-500 rounded-sm border-2 font-mono text-sm ml-1 mr-1 ">24x7</span>
-
+              <span className="text-indigo-500 rounded-sm border-2 font-mono text-sm ml-1 mr-1">24x7</span>
               Academy
+              {daysLeft > 0 && (
+                <span className="ml-2 bg-red-500 text-white text-[10px] px-2 py-[1px] rounded-full animate-pulse">
+                  {daysLeft} days left
+                </span>
+              )}
             </div>
           </div>
         </a>
 
-        {/* Hamburger Icon for Mobile */}
+        {/* Hamburger (Mobile Only) */}
         <button
           onClick={toggleMenu}
           className="md:hidden p-2 text-black"
@@ -118,102 +117,35 @@ function Navbar() {
           </svg>
         </button>
 
-        {/* Main Menu (Desktop) */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-4 font-sans">
-          {/* Home */}
-  <a
-    href="/"
-    className="flex items-center gap-1 text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-home">
-      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-      <polyline points="9 22 9 12 15 12 15 22"></polyline>
-    </svg>
-    Home
-  </a>
+          <a href="/" className="text-black hover:text-sky-500 text-sm">Home</a>
+          <a href="/All Companies" className="text-black hover:text-sky-500 text-sm">All Companies</a>
+          <a href="https://github.com/TechnoManiaLabs" target="_blank" rel="noreferrer" className="text-black hover:text-sky-500 text-sm">GitHub</a>
+          <a href="#" className="text-black hover:text-sky-500 text-sm">Community</a>
 
-  {/* Documentation */}
-  <a
-    href="/All Companies"
-    className="flex items-center gap-1 text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-notebook">
-      <path d="M2 6h4"></path>
-      <path d="M2 10h4"></path>
-      <path d="M2 14h4"></path>
-      <path d="M2 18h4"></path>
-      <rect width="16" height="20" x="4" y="2" rx="2"></rect>
-      <path d="M16 2v20"></path>
-    </svg>
-    All Companies
-  </a>
-  <a
-  href="https://github.com/TechnoManiaLabs"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center gap-1 text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
->
-  <img
-    width="20"
-    height="20"
-    src="https://img.icons8.com/ios-glyphs/30/github.png"
-    alt="GitHub"
-  />
-  Github
-</a>
+          <div className="shrink-0 bg-gray-400 w-[1px] h-6 mx-2 "></div>
 
-          <a
-            href="#"
-            className="text-black dark:hover:text-sky-400 hover:text-sky-400 text-sm"
-          >
-            Community
-          </a>
-
-          {/* Vertical Line */}
-      <div className="shrink-0 bg-gray-400 w-[1px] h-6 mx-2 "></div>
-
+          {/* Login/Signup */}
+          <a href="/login" className="text-sm px-4 py-1 border border-indigo-500 text-indigo-600 rounded-full hover:bg-indigo-100">Login</a>
+          <a href="/signup" className="text-sm px-4 py-1 bg-indigo-600 text-white rounded-full hover:bg-indigo-700">Signup</a>
         </div>
 
-        {/* Mobile Menu with Animation */}
+        {/* Mobile Menu */}
         <div
           className={`${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
             } md:hidden absolute top-16 left-0 w-full bg-green-300 text-black py-4 space-y-4 transition-all duration-500 ease-in-out overflow-hidden`}
         >
-          <a
-    href="/"
-    className="flex items-center gap-1 text-black ml-3 dark:hover:text-sky-400 hover:text-sky-400 text-sm"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-home">
-      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-      <polyline points="9 22 9 12 15 12 15 22"></polyline>
-    </svg>
-    Home
-  </a>
-  {/* Documentation */}
-  <a
-    href="/All Companies"
-    className="flex items-center gap-1 text-black ml-3 dark:hover:text-sky-400 hover:text-sky-400 text-sm"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-notebook">
-      <path d="M2 6h4"></path>
-      <path d="M2 10h4"></path>
-      <path d="M2 14h4"></path>
-      <path d="M2 18h4"></path>
-      <rect width="16" height="20" x="4" y="2" rx="2"></rect>
-      <path d="M16 2v20"></path>
-    </svg>
-    All Companies
-  </a>
-  <a
-            href="Github"
-            className="flex items-center gap-1 text-black ml-3 dark:hover:text-sky-400 hover:text-sky-400 text-sm"
-          >
-            {<img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="GitHub" />}
-            Github
-          </a>
-          <a href="#" className="block px-4 py-2 hover:bg-sky-400">
-            Community
-          </a>
+          <a href="/" className="block px-4 py-2 hover:bg-sky-400">Home</a>
+          <a href="/All Companies" className="block px-4 py-2 hover:bg-sky-400">All Companies</a>
+          <a href="https://github.com/TechnoManiaLabs" className="block px-4 py-2 hover:bg-sky-400">GitHub</a>
+          <a href="#" className="block px-4 py-2 hover:bg-sky-400">Community</a>
+
+          <div className="border-t border-gray-400 my-2"></div>
+
+          {/* Login/Signup Mobile */}
+          <a href="/login" className="block px-4 py-2 text-indigo-600 hover:bg-indigo-100">Login</a>
+          <a href="/signup" className="block px-4 py-2 text-white bg-indigo-600 hover:bg-indigo-700 rounded mx-4 text-center">Signup</a>
         </div>
       </div>
     </nav>
