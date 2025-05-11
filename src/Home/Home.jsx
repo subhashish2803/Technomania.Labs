@@ -7,6 +7,11 @@ import Tech from '../components/Tech'
 import Footer from '../components/Footer'
 import HeroSection from '../components/HeroSection'
 import Notes from '../components/Notes'
+import HowWeWork from '../components/HowWework'
+import IndustriesSlider from '../components/IndustriesSlider'
+import ExpertiseSection from '../components/ExpertiseSection'
+import BlogSection from '../components/BlogSection'
+import AboutSection from '../components/AboutSection'
 
 
 
@@ -21,12 +26,15 @@ function Home() {
     <div>
         <Navbar/>
         <Banner/>
-        
-        
-        
-        <Tech/>
         <HeroSection/>
-        <Notes/>
+        <AboutSection/>
+        <IndustriesSlider/>
+        <ExpertiseSection/>
+        <HowWeWork/>
+        <BlogSection/>
+        <Tech/>
+        
+        
         
         <Footer/>
     </div>

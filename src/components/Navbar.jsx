@@ -59,8 +59,8 @@ function Navbar() {
 
   return (
     <nav
-      className={`${isSticky ? "bg-amber-100 shadow-lg" : ""
-        } bg-amber-100 text-base-content sticky top-0 flex h-14 z-30 w-full justify-center bg-opacity-90 backdrop-blur transition-shadow duration-100`}
+      className={`${isSticky ? "bg-[#AF9A57] shadow-lg" : ""
+        } bg-[#AF9A57] text-base-content sticky top-0 flex h-14 z-30 w-full justify-center bg-opacity-90 backdrop-blur transition-shadow duration-100`}
     >
       <div className="w-full flex items-center justify-between px-4">
         {/* Logo and Company Name */}
@@ -124,11 +124,9 @@ function Navbar() {
           <a href="https://github.com/TechnoManiaLabs" target="_blank" rel="noreferrer" className="text-black hover:text-sky-500 text-sm">GitHub</a>
           <a href="#" className="text-black hover:text-sky-500 text-sm">Community</a>
 
-          <div className="shrink-0 bg-gray-400 w-[1px] h-6 mx-2 "></div>
+          
 
-          {/* Login/Signup */}
-          <a href="/login" className="text-sm px-4 py-1 border border-indigo-500 text-indigo-600 rounded-full hover:bg-indigo-100">Login</a>
-          <a href="/signup" className="text-sm px-4 py-1 bg-indigo-600 text-white rounded-full hover:bg-indigo-700">Signup</a>
+          
         </div>
 
         {/* Mobile Menu */}
@@ -143,9 +141,7 @@ function Navbar() {
 
           <div className="border-t border-gray-400 my-2"></div>
 
-          {/* Login/Signup Mobile */}
-          <a href="/login" className="block px-4 py-2 text-indigo-600 hover:bg-indigo-100">Login</a>
-          <a href="/signup" className="block px-4 py-2 text-white bg-indigo-600 hover:bg-indigo-700 rounded mx-4 text-center">Signup</a>
+          
         </div>
       </div>
     </nav>

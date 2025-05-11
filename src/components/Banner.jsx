@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Star, User } from "lucide-react";
 import { motion } from "framer-motion";
-import { FaCode, FaDatabase, FaCloud, FaRobot, FaMobileAlt, FaCube } from "react-icons/fa";
+import { FaCode, FaDatabase, FaCloud, FaRobot, FaMobileAlt, FaCube, FaLightbulb, FaUsers, FaSitemap, FaPenNib, FaRocket, FaCogs, FaChartLine, FaLifeRing } from "react-icons/fa";
+
 import PatternedBackground from "./PatternedBackground";
 
 function Banner() {
@@ -54,7 +55,31 @@ function Banner() {
       description: "Deploying scalable applications using AWS, Docker, Kubernetes, and CI/CD pipelines.",
       icon: <FaCloud />,
     },
-    
+    {
+    id: 4,
+    title: "Define",
+    description: "Strategy, Research & Insights, Stakeholder Workshops, Platform Strategy, IA & Content Planning.",
+    icon: <FaLightbulb />,
+  },
+  {
+    id: 5,
+    title: "Visualize",
+    description: "UX Design, User Research, Personas, Journey Mapping, Wireframing, and IA Validation.",
+    icon: <FaUsers />,
+  },
+  {
+    id: 6,
+    title: "Create",
+    description: "UI Design, Responsive Design, Digital Branding, Prototyping, and Design Systems.",
+    icon: <FaPenNib />,
+  },
+  {
+    id: 7,
+    title: "Launch",
+    description: "System Architecture, CMS, Product Development, APIs, and 3rd Party Integrations.",
+    icon: <FaRocket />,
+  },
+  
   ];
   const [content, setContent] = useState({
     title: "Redux & Zustand",
@@ -232,7 +257,7 @@ function Banner() {
   };
   return (
     <>
-      <body className="min-h-screen bg-gray-50 text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
+      <div className="min-h-screen bg-gray-50 text-gray-400 md:px-20 px-4 flex flex-col md:flex-row font-sans">
         {/* Left Section */}
         <div className="order-2 md:order-1 w-full md:w-2/3 mt-12 text-white">
         <PatternedBackground>
@@ -240,7 +265,7 @@ function Banner() {
             <h1 className="text-4xl font-sans text-black sm:text-5xl relative">
               Get started with
               <span className="relative inline-block ml-2">
-                <span className="relative z-10 text-green-600 text-4xl sm:text-5xl">Technomania Labs</span>
+                <span className="relative z-10 text-[#AF9A57] text-4xl sm:text-5xl">Technomania Labs</span>
               </span>
             </h1>
             <p className="my-3 text-slate-400 dark:text-slate-600">"Your Gateway to Full-Stack Brilliance."</p>
@@ -280,7 +305,7 @@ function Banner() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="absolute top-16 left-8 bg-white shadow-lg rounded-lg px-6 py-3 flex items-center space-x-3 border w-64 border-2 border-green-600"
+              className="absolute top-16 left-8 bg-white shadow-lg rounded-lg px-6 py-3 flex items-center space-x-3 border w-64 border-2 border-[#AF9A57]"
             >
               <img src="/logos/hero.webp" alt="User" className="w-10 h-10 rounded-full" />
               <div className="text-sm">
@@ -314,7 +339,7 @@ function Banner() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0 }}
-              className="absolute bottom-10 right-8 bg-white shadow-lg rounded-lg px-6 py-3 flex flex-col items-start space-y-2 border-2 border-green-600 w-64 h-auto"
+              className="absolute bottom-10 right-8 bg-white shadow-lg rounded-lg px-6 py-3 flex flex-col items-start space-y-2 border-2 border-[#AF9A57] w-64 h-auto"
             >
               <div className="flex items-center gap-2">
               <svg
@@ -372,7 +397,7 @@ function Banner() {
             <h2 className="text-2xl font-bold text-black font-jakarta mb-4">
               Our Service Journey
             </h2>
-            <div className="relative border-l-2 border-green-500 ml-4">
+            <div className="relative border-l-2 border-[#AF9A57] ml-4">
               {services.map((service, index) => (
                 <motion.div
                   key={service.id}
@@ -381,7 +406,7 @@ function Banner() {
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   className="mb-6 pl-4"
                 >
-                  <div className="absolute -left-5 w-10 h-10 flex items-center justify-center bg-green-600 rounded-full text-white shadow-lg">
+                  <div className="absolute -left-5 w-10 h-10 flex items-center justify-center bg-[#AF9A57] rounded-full text-white shadow-lg">
                     {service.icon}
                   </div>
                   <h3 className="text-md ml-2 font-sans text-black font-semibold">
@@ -395,9 +420,9 @@ function Banner() {
             </div>
           </motion.div>
         </div>
-      </body>
+      </div>
 
-      {/* Technologies and Code Snippet Section */}
+      {/* Technologies and Code Snippet Section */}s
       <div className="flex flex-wrap md:flex-nowrap items-start gap-6 p-6 bg-white">
         {/* Left Section: Technologies */}
         <div className="w-full md:w-2/3 lg:w-2/3 flex flex-wrap gap-6 md:ml-4">
@@ -420,7 +445,7 @@ function Banner() {
           ))}
         </div>
 
-        {/* Right Section: Code Snippet */}
+         
         <div className="w-full md:w-2/3 lg:w-1/3 p-4 md:px-6">
           {content && (
             <div
@@ -438,9 +463,9 @@ function Banner() {
               <p className="text-slate-800">{content.description}</p>
 
               <div className="relative mt-4">
-                {/* Code Snippet */}
+                
                 <div className="rounded-lg bg-slate-800 border border-slate-700 shadow-md overflow-hidden">
-                  {/* Header bar like Tailwind Docs */}
+                  
                   <div className="flex items-center space-x-2 bg-slate-700 px-4 py-2">
                     <span className="w-3 h-3 bg-red-500 rounded-full"></span>
                     <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
@@ -455,11 +480,11 @@ function Banner() {
                     <code className="whitespace-pre">
                       {typedCode.split("\n").map((line, index) => (
                         <div key={index} className="flex">
-                          {/* Line Numbers */}
+                          
                           <span className="text-slate-500 pr-4 select-none">
                             {index + 1}
                           </span>
-                          {/* Code Line */}
+                          
                           <span className="text-sky-400">{line}</span>
                         </div>
                       ))}
@@ -471,6 +496,7 @@ function Banner() {
           )}
         </div>
       </div>
+      
     </>
   );
 }

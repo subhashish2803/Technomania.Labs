@@ -15,7 +15,7 @@ export default function Welcome() {
 
     const timer = setTimeout(() => {
       navigate("/");
-    }, 1000); // redirect after 3 sec
+    }, 3000); // redirect after 3 sec
 
     return () => clearTimeout(timer);
   }, [navigate]);
