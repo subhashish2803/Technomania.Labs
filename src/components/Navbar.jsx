@@ -10,141 +10,108 @@ function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
-    const handleThemeToggle = () => {
-      const newTheme = !isDarkTheme;
-      setIsDarkTheme(newTheme);
-      document.documentElement.classList.toggle("dark", newTheme);
-    };
+    const handleScroll = () => setIsSticky(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    mediaQuery.addEventListener("change", (e) =>
-      handleThemeToggle(e.matches ? true : false)
-    );
-
-    return () => mediaQuery.removeEventListener("change", handleThemeToggle);
-  }, [isDarkTheme]);
-
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
   const toggleTheme = () => {
     setIsDarkTheme((prev) => !prev);
     document.documentElement.classList.toggle("dark", !isDarkTheme);
   };
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsSticky(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const releaseDate = new Date("2025-03-01");
   const [daysLeft, setDaysLeft] = useState(0);
-
   useEffect(() => {
     const updateDaysLeft = () => {
       const today = new Date();
       const timeDiff = releaseDate - today;
       setDaysLeft(Math.max(0, Math.ceil(timeDiff / (1000 * 60 * 60 * 24))));
     };
-
     updateDaysLeft();
     const interval = setInterval(updateDaysLeft, 1000 * 60 * 60 * 24);
-
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <nav
-      className={`${isSticky ? "bg-[#AF9A57] shadow-lg" : ""
-        } bg-[#AF9A57] text-base-content sticky top-0 flex h-14 z-30 w-full justify-center bg-opacity-90 backdrop-blur transition-shadow duration-100`}
-    >
-      <div className="w-full flex items-center justify-between px-4">
-        {/* Logo and Company Name */}
-        <a href="/" className="flex items-center py-2 group">
-          <svg
-            className="h-8 w-8 md:h-10 md:w-10"
-            width="32"
-            height="32"
-            viewBox="0 0 415 415"
-            xmlns="http://www.w3.org/2000/svg"
+    <header className={`sticky top-0 z-50 w-full bg-[#AF9A57] shadow ${isSticky ? "shadow-md" : ""} transition duration-300`}>
+      <div className="container mx-auto flex items-center justify-between px-4 py-2 md:py-3">
+        {/* Logo */}
+        <a href="/" className="flex items-center  group">
+  <svg className="h-10 w-10" viewBox="0 0 415 415" xmlns="http://www.w3.org/2000/svg">
+    <rect x="82.5" y="290" width="250" height="125" rx="62.5" fill="#1AD1A5"></rect>
+    <circle cx="207.5" cy="135" r="130" fill="black" fillOpacity=".3"></circle>
+    <circle cx="207.5" cy="135" r="125" fill="white"></circle>
+    <circle cx="207.5" cy="135" r="56" fill="#007BFF"></circle>
+    <line x1="182.5" y1="115" x2="232.5" y2="115" stroke="white" strokeWidth="10" />
+    <line x1="207.5" y1="115" x2="207.5" y2="165" stroke="white" strokeWidth="10" />
+  </svg>
+  <div className="flex flex-col items-center text-center">
+    <span className="text-lg font-bold text-black tracking-wide">TECHNOMANIA LABS</span>
+    <span className="text-[10px] text-slate-700 font-sans">Build Beyond Limits</span>
+  </div>
+</a>
+
+
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex gap-6 items-center text-md font-semibold tracking-wide">
+          <a href="/" className="text-black hover:text-white hover:bg-black px-3 py-1 rounded transition">Home</a>
+          <a href="/" className="text-black hover:text-white hover:bg-black px-3 py-1 rounded transition">About Us</a>
+          <ul className="flex space-x-6">
+        <li className="relative group">
+          <span className="text-black font-semibold cursor-pointer hover:text-blue-600">
+            Products
+          </span>
+
+          <ul className="absolute left-0 mt-8 w-40 bg-white rounded-md shadow-lg invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
+            <li>
+              <a className="block px-4 py-2 hover:bg-gray-100">VISTOFY</a>
+            </li>
+            
+          </ul>
+        </li>
+      </ul>
+          <a href="/All Companies" className="text-black hover:text-white hover:bg-black px-3 py-1 rounded transition">All Companies</a>
+          <a href="https://github.com/TechnoManiaLabs" target="_blank" rel="noopener noreferrer" className="text-black hover:text-white hover:bg-black px-3 py-1 rounded transition">GitHub</a>
+          <a href="#" className="text-black hover:text-white hover:bg-black px-3 py-1 rounded transition">Career</a>
+          <a
+            href="/contact"
+            className="bg-black text-white px-4 py-2 rounded  text-sm"
           >
-            <rect x="82.5" y="290" width="250" height="125" rx="62.5" fill="#1AD1A5"></rect>
-            <circle cx="207.5" cy="135" r="130" fill="black" fillOpacity=".3"></circle>
-            <circle cx="207.5" cy="135" r="125" fill="white"></circle>
-            <circle cx="207.5" cy="135" r="56" fill="#007BFF"></circle>
-            <line x1="182.5" y1="115" x2="232.5" y2="115" stroke="white" strokeWidth="10" />
-            <line x1="207.5" y1="115" x2="207.5" y2="165" stroke="white" strokeWidth="10" />
-          </svg>
+            Contact
+          </a>
+        </nav>
 
-          <div className="flex flex-col ml-2">
-            <span className="text-md md:text-md font-sans text-black font-semibold tracking-wide">
-              technomaniaLabs
-            </span>
-            <div className="flex items-center gap-1 text-xs font-mono text-black">
-              Ready
-              <span className="text-indigo-500 rounded-sm border-2 font-mono text-sm ml-1 mr-1">24x7</span>
-              Academy
-              {daysLeft > 0 && (
-                <span className="ml-2 bg-red-500 text-white text-[10px] px-2 py-[1px] rounded-full animate-pulse">
-                  {daysLeft} days left
-                </span>
-              )}
-            </div>
-          </div>
-        </a>
-
-        {/* Hamburger (Mobile Only) */}
+        {/* Mobile Toggle */}
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 text-black"
-          aria-label="Toggle menu"
+          className="md:hidden focus:outline-none text-black"
+          aria-label="Toggle Menu"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M3 12h18M3 6h18M3 18h18" />
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-4 font-sans">
-          <a href="/" className="text-black hover:text-sky-500 text-sm">Home</a>
-          <a href="/All Companies" className="text-black hover:text-sky-500 text-sm">All Companies</a>
-          <a href="https://github.com/TechnoManiaLabs" target="_blank" rel="noreferrer" className="text-black hover:text-sky-500 text-sm">GitHub</a>
-          <a href="#" className="text-black hover:text-sky-500 text-sm">Community</a>
-
-          
-
-          
-        </div>
-
-        {/* Mobile Menu */}
-        <div
-          className={`${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-            } md:hidden absolute top-16 left-0 w-full bg-green-300 text-black py-4 space-y-4 transition-all duration-500 ease-in-out overflow-hidden`}
-        >
-          <a href="/" className="block px-4 py-2 hover:bg-sky-400">Home</a>
-          <a href="/All Companies" className="block px-4 py-2 hover:bg-sky-400">All Companies</a>
-          <a href="https://github.com/TechnoManiaLabs" className="block px-4 py-2 hover:bg-sky-400">GitHub</a>
-          <a href="#" className="block px-4 py-2 hover:bg-sky-400">Community</a>
-
-          <div className="border-t border-gray-400 my-2"></div>
-
-          
-        </div>
       </div>
-    </nav>
+
+      {/* Mobile Menu */}
+      <div
+        className={`${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"} md:hidden overflow-hidden transition-all duration-300 bg-[#AF9A57] px-4 pb-4`}
+      >
+        <a href="/" className="block py-2 text-black font-medium hover:bg-black hover:text-white rounded px-3 transition">Home</a>
+        <a href="/All Companies" className="block py-2 text-black font-medium hover:bg-black hover:text-white rounded px-3 transition">All Companies</a>
+        <a href="https://github.com/TechnoManiaLabs" className="block py-2 text-black font-medium hover:bg-black hover:text-white rounded px-3 transition">GitHub</a>
+        <a href="#" className="block py-2 text-black font-medium hover:bg-black hover:text-white rounded px-3 transition">Community</a>
+        <a
+          href="/contact"
+          className="block w-full text-center mt-2 bg-black text-white px-4 py-2 rounded hover:bg-sky-600 transition"
+        >
+          Contact
+        </a>
+      </div>
+    </header>
   );
 }
 
